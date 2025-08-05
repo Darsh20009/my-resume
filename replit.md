@@ -9,6 +9,8 @@ The website serves as a professional showcase highlighting expertise in ERP syst
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Contact form integration: Messages should be sent directly to WhatsApp (+966532441566) instead of email
+Resume download: Users should be able to download an HTML/CSS creative resume file
 
 ## System Architecture
 

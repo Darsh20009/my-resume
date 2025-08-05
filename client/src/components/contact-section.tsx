@@ -166,7 +166,18 @@ export function ContactSection() {
               <p className="text-sm text-muted-foreground mb-4">
                 Get a detailed overview of my experience and skills
               </p>
-              <Button className="w-full">
+              <Button 
+                className="w-full"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/youssef-darwish-resume.html';
+                  link.download = 'Youssef-Darwish-Resume.html';
+                  link.target = '_blank';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
                 <Download className="mr-2 h-4 w-4" />
                 {t("download_resume")}
               </Button>

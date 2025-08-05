@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Darwish - Creative Full-Stack Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06d6a0, #ffd60a);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+        
+        .summary {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .experience-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .exp-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        
+        .exp-company {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6b7280;
+        }
+        
+        .exp-period {
+            font-size: 0.9rem;
+            color: #8b5cf6;
+            font-weight: 500;
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        
+        .exp-description {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .exp-description li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #4b5563;
+        }
+        
+        .exp-description li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, #fef7ff, #f3e8ff);
+            border: 1px solid #e9d5ff;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.15);
+        }
+        
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            color: #4b5563;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            background: linear-gradient(135deg, #06d6a0, #14b8a6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1f2937, #111827);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                gap: 15px;
+            }
+            
+            .contact-item {
+                font-size: 0.8rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .exp-header {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .header::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iNjAiIGZpbGw9IiMzYjgyZjYiLz4KPHRleHQgeD0iNjAiIHk9IjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkludGVyIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCI+WUQ8L3RleHQ+Cjwvc3ZnPgo=" alt="Youssef Darwish" class="profile-img">
+            <h1 class="name">يوسف درويش</h1>
+            <h2 class="title">مطور مواقع إبداعي متكامل | Odoo, Salesforce, React, AI</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    youssefdarwish20009@gmail.com
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    +966532441566
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    الرياض، السعودية
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h3 class="section-title">الملخص المهني</h3>
+                <div class="summary">
+                    مطور مواقع إبداعي ومتطلع للمستقبل مع خبرة عملية في Odoo وSalesforce (Apex) وReact وأدوات النشر الحديثة مثل Render وVercel. متخصص في دمج واجهات برمجة التطبيقات الخلفية مع بيانات العملاء، أعمل باستمرار على تحسين وتحديث عملي باستخدام قوة أدوات الذكاء الاصطناعي والأتمتة. أبني تطبيقات ويب وأنظمة ERP قابلة للتطوير في العالم الحقيقي تتماشى مع اتجاهات التكنولوجيا الحالية.
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">المهارات التقنية</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>تطوير الواجهة الأمامية</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>تطوير النظام الخلفي</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">Odoo ERP</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>CRM & ERP</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">Salesforce Apex</span>
+                            <span class="skill-tag">Odoo Modules</span>
+                            <span class="skill-tag">API Integration</span>
+                            <span class="skill-tag">Data Migration</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>الحوسبة السحابية والنشر</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">Render</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>أدوات الذكاء الاصطناعي</h4>
+                        <div class="skill-list">
+                            <span class="skill-tag">ChatGPT</span>
+                            <span class="skill-tag">GitHub Copilot</span>
+                            <span class="skill-tag">AI Automation</span>
+                            <span class="skill-tag">Code Generation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">الخبرة المهنية</h3>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h4 class="exp-title">مطور واجهة أمامية</h4>
+                            <p class="exp-company">شركة معاك (عن بُعد)</p>
+                        </div>
+                        <span class="exp-period">يناير 2022 - يناير 2024</span>
+                    </div>
+                    <ul class="exp-description">
+                        <li>تصميم واجهات تفاعلية ومتجاوبة باستخدام React.js</li>
+                        <li>إدارة إصدارات الكود مع Git و GitHub في سير العمل التعاوني</li>
+                        <li>تنفيذ ميزات تركز على المستخدم وتحديثات التصميم</li>
+                        <li>استخدام أدوات الذكاء الاصطناعي بفعالية لتحسين أداء الواجهة الأمامية وإنتاجية البرمجة</li>
+                        <li>دمج تطبيقات الويب مع منصات الاستضافة الحديثة مثل Vercel</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h4 class="exp-title">مطور Odoo و Salesforce مستقل</h4>
+                            <p class="exp-company">العمل الحر عن بُعد</p>
+                        </div>
+                        <span class="exp-period">سبتمبر 2021 - الحاضر</span>
+                    </div>
+                    <ul class="exp-description">
+                        <li>بناء وتخصيص وحدات Odoo التي تغطي الموارد البشرية والمبيعات والمخزون</li>
+                        <li>تطوير محفزات Apex المخصصة والمنطق لأتمتة Salesforce CRM</li>
+                        <li>دمج واجهات برمجة التطبيقات Odoo-Salesforce لتبسيط بيانات العملاء والعمليات</li>
+                        <li>تطوير واجهات برمجة تطبيقات خلفية آمنة للتعامل مع معلومات العملاء الحساسة</li>
+                        <li>نشر أنظمة ويب حديثة باستخدام Render، مما يضمن تسليماً سريعاً وقابلاً للتطوير</li>
+                        <li>تحسين العمل من خلال أدوات الذكاء الاصطناعي للاختبار وتوليد الكود والتحسين</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">المشاريع المميزة</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h4 class="project-title">🛍️ نظام ERP للبيع بالتجزئة</h4>
+                        <p class="project-description">
+                            نظام ERP كامل مبني في Odoo لسلسلة بيع بالتجزئة، يشمل المخزون والفوترة وتتبع الموظفين ولوحات معلومات رؤى العملاء.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <h4 class="project-title">🔄 أداة مزامنة Odoo ↔ Salesforce</h4>
+                        <p class="project-description">
+                            تكامل قائم على واجهة برمجة التطبيقات بين Odoo و Salesforce لمزامنة العملاء المحتملين والعملاء والمبيعات في الوقت الفعلي.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <h4 class="project-title">🌐 المحفظة الشخصية على Vercel</h4>
+                        <p class="project-description">
+                            محفظة سريعة وحديثة ومتجاوبة مع الهواتف المحمولة مبنية بـ React.js ومنشورة عبر Vercel مع تكامل GitHub CI/CD.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">اللغات</h3>
+                <div class="languages">
+                    <div class="language-item">العربية - اللغة الأم</div>
+                    <div class="language-item">الإنجليزية - مستوى مهني</div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 يوسف درويش - مطور مواقع إبداعي متكامل</p>
+            <p>Passionate about modern technology, AI integration, and open-source tools</p>
+        </footer>
+    </div>
+</body>
+</html>
