@@ -1,0 +1,380 @@
+export const translations = {
+  en: {
+    // Navigation
+    nav_home: "Home",
+    nav_about: "About",
+    nav_skills: "Skills",
+    nav_experience: "Experience",
+    nav_projects: "Projects",
+    nav_contact: "Contact",
+    
+    // Hero Section
+    hero_greeting: "Hello, I'm",
+    hero_name: "Youssef Darwish",
+    hero_title: "Creative Full-Stack Developer",
+    hero_subtitle: "Specialized in Odoo, Salesforce, React, and AI-Driven Solutions",
+    hero_description: "Building scalable web applications and ERP systems with modern technology and creative innovation.",
+    hero_contact: "Get In Touch",
+    hero_portfolio: "View Portfolio",
+    
+    // About Section
+    about_title: "About Me",
+    about_subtitle: "Passionate about creating innovative solutions with modern technology",
+    about_heading: "Professional Summary",
+    about_description: "A creative and forward-thinking full-stack developer with hands-on experience in Odoo, Salesforce (Apex), React, and modern deployment tools like Render and Vercel. Specialized in integrating backend APIs with client data, I continuously improve and modernize my work using the power of AI tools and automation.",
+    about_description2: "I build real-world, scalable web applications and ERP systems that align with current tech trends. My work is driven by innovation, efficiency, and clean design. With a strong foundation in self-learning and freelance work, I thrive in environments that require continuous growth and creativity.",
+    location_label: "Location",
+    location: "Riyadh, Saudi Arabia",
+    experience_label: "Experience",
+    experience_years: "3+ Years",
+    languages_label: "Languages",
+    languages: "Arabic (Native), English (Professional)",
+    
+    // Skills Section
+    skills_title: "Core Skills",
+    skills_subtitle: "Technologies and tools I use to bring ideas to life",
+    frontend_title: "Frontend Development",
+    backend_title: "Backend Development",
+    cloud_title: "Cloud & DevOps",
+    
+    // Experience Section
+    experience_title: "Experience",
+    experience_subtitle: "My professional journey and achievements",
+    exp1_title: "Frontend Developer",
+    exp1_period: "Jan 2022 - Jan 2024",
+    exp1_company: "Ma'ak Company (Remote)",
+    exp1_desc1: "Designed interactive and responsive UIs using React.js",
+    exp1_desc2: "Managed code versioning with Git & GitHub in collaborative workflows",
+    exp1_desc3: "Implemented user-centered features and design updates", 
+    exp1_desc4: "Actively used AI tools to optimize frontend performance and coding productivity",
+    exp1_desc5: "Integrated web apps with modern hosting platforms like Vercel",
+    
+    exp2_title: "Freelance Odoo & Salesforce Developer",
+    exp2_period: "Sep 2021 - Present",
+    exp2_company: "Remote Freelance Work",
+    exp2_desc1: "Built and customized modules for Odoo covering HR, Sales, and Inventory",
+    exp2_desc2: "Developed custom Apex triggers and logic for automating Salesforce CRM",
+    exp2_desc3: "Integrated Odoo-Salesforce APIs to streamline customer data and operations",
+    exp2_desc4: "Developed secure backend APIs for handling sensitive client information",
+    exp2_desc5: "Deployed modern web systems using Render, ensuring fast, scalable delivery",
+    exp2_desc6: "Enhanced work through AI tools for testing, code generation, and optimization",
+    
+    // Projects Section
+    projects_title: "Featured Projects",
+    projects_subtitle: "Some of the work I'm most proud of",
+    project1_title: "Retail ERP System",
+    project1_desc: "Full ERP system built in Odoo for a retail chain, including inventory, billing, employee tracking, and customer insights dashboards.",
+    project2_title: "Odoo ↔ Salesforce Sync Tool",
+    project2_desc: "API-based integration between Odoo and Salesforce to sync leads, customers, and sales in real time.",
+    project3_title: "Personal Portfolio on Vercel",
+    project3_desc: "A fast, modern, mobile-first portfolio built with React.js and deployed via Vercel with GitHub CI/CD integration.",
+    view_project: "View Project",
+    
+    // Contact Section
+    contact_title: "Get In Touch",
+    contact_subtitle: "Ready to work together? Let's discuss your next project",
+    contact_description: "Feel free to reach out for freelance projects, internship opportunities, or tech collaborations.",
+    email_label: "Email",
+    whatsapp_label: "WhatsApp",
+    form_name: "Name",
+    form_email: "Email", 
+    form_subject: "Subject",
+    form_message: "Message",
+    form_send: "Send Message",
+    form_success: "Message sent successfully!",
+    form_error: "Failed to send message. Please try again.",
+    
+    // Footer
+    footer_tagline: "Creative Full-Stack Developer",
+    download_resume: "Download Resume",
+    footer_copyright: "© 2024 Youssef Darwish. All rights reserved.",
+    
+    // Loading
+    loading: "Loading...",
+  },
+  
+  ar: {
+    // Navigation
+    nav_home: "الرئيسية",
+    nav_about: "نبذة عني",
+    nav_skills: "المهارات",
+    nav_experience: "الخبرة",
+    nav_projects: "المشاريع",
+    nav_contact: "التواصل",
+    
+    // Hero Section
+    hero_greeting: "مرحباً، أنا",
+    hero_name: "يوسف درويش",
+    hero_title: "مطور مواقع إبداعي متكامل",
+    hero_subtitle: "متخصص في Odoo، Salesforce، React، والحلول المدعومة بالذكاء الاصطناعي",
+    hero_description: "بناء تطبيقات ويب قابلة للتطوير وأنظمة ERP بالتكنولوجيا الحديثة والابتكار الإبداعي.",
+    hero_contact: "تواصل معي",
+    hero_portfolio: "عرض المشاريع",
+    
+    // About Section
+    about_title: "نبذة عني",
+    about_subtitle: "شغوف بإنشاء حلول مبتكرة باستخدام التكنولوجيا الحديثة",
+    about_heading: "الملخص المهني",
+    about_description: "مطور مواقع إبداعي ومتطلع للمستقبل مع خبرة عملية في Odoo وSalesforce (Apex) وReact وأدوات النشر الحديثة مثل Render وVercel. متخصص في دمج واجهات برمجة التطبيقات الخلفية مع بيانات العملاء، أعمل باستمرار على تحسين وتحديث عملي باستخدام قوة أدوات الذكاء الاصطناعي والأتمتة.",
+    about_description2: "أبني تطبيقات ويب وأنظمة ERP قابلة للتطوير في العالم الحقيقي تتماشى مع اتجاهات التكنولوجيا الحالية. عملي مدفوع بالابتكار والكفاءة والتصميم النظيف. مع أساس قوي في التعلم الذاتي والعمل الحر، أزدهر في البيئات التي تتطلب نمواً وإبداعاً مستمرين.",
+    location_label: "الموقع",
+    location: "الرياض، المملكة العربية السعودية",
+    experience_label: "الخبرة",
+    experience_years: "3+ سنوات",
+    languages_label: "اللغات",
+    languages: "العربية (اللغة الأم)، الإنجليزية (مستوى مهني)",
+    
+    // Skills Section
+    skills_title: "المهارات الأساسية",
+    skills_subtitle: "التقنيات والأدوات التي أستخدمها لتحويل الأفكار إلى واقع",
+    frontend_title: "تطوير الواجهة الأمامية",
+    backend_title: "تطوير النظام الخلفي",
+    cloud_title: "الحوسبة السحابية والتطوير",
+    
+    // Experience Section
+    experience_title: "الخبرة المهنية",
+    experience_subtitle: "رحلتي المهنية وإنجازاتي",
+    exp1_title: "مطور واجهة أمامية",
+    exp1_period: "يناير 2022 - يناير 2024",
+    exp1_company: "شركة معاك (عن بُعد)",
+    exp1_desc1: "تصميم واجهات تفاعلية ومتجاوبة باستخدام React.js",
+    exp1_desc2: "إدارة إصدارات الكود مع Git و GitHub في سير العمل التعاوني",
+    exp1_desc3: "تنفيذ ميزات تركز على المستخدم وتحديثات التصميم",
+    exp1_desc4: "استخدام أدوات الذكاء الاصطناعي بفعالية لتحسين أداء الواجهة الأمامية وإنتاجية البرمجة",
+    exp1_desc5: "دمج تطبيقات الويب مع منصات الاستضافة الحديثة مثل Vercel",
+    
+    exp2_title: "مطور Odoo و Salesforce مستقل",
+    exp2_period: "سبتمبر 2021 - الحاضر",
+    exp2_company: "العمل الحر عن بُعد",
+    exp2_desc1: "بناء وتخصيص وحدات Odoo التي تغطي الموارد البشرية والمبيعات والمخزون",
+    exp2_desc2: "تطوير محفزات Apex المخصصة والمنطق لأتمتة Salesforce CRM",
+    exp2_desc3: "دمج واجهات برمجة التطبيقات Odoo-Salesforce لتبسيط بيانات العملاء والعمليات",
+    exp2_desc4: "تطوير واجهات برمجة تطبيقات خلفية آمنة للتعامل مع معلومات العملاء الحساسة",
+    exp2_desc5: "نشر أنظمة ويب حديثة باستخدام Render، مما يضمن تسليماً سريعاً وقابلاً للتطوير",
+    exp2_desc6: "تحسين العمل من خلال أدوات الذكاء الاصطناعي للاختبار وتوليد الكود والتحسين",
+    
+    // Projects Section
+    projects_title: "المشاريع المميزة",
+    projects_subtitle: "بعض الأعمال التي أفتخر بها أكثر",
+    project1_title: "نظام ERP للبيع بالتجزئة",
+    project1_desc: "نظام ERP كامل مبني في Odoo لسلسلة بيع بالتجزئة، يشمل المخزون والفوترة وتتبع الموظفين ولوحات معلومات رؤى العملاء.",
+    project2_title: "أداة مزامنة Odoo ↔ Salesforce",
+    project2_desc: "تكامل قائم على واجهة برمجة التطبيقات بين Odoo و Salesforce لمزامنة العملاء المحتملين والعملاء والمبيعات في الوقت الفعلي.",
+    project3_title: "المحفظة الشخصية على Vercel",
+    project3_desc: "محفظة سريعة وحديثة ومتجاوبة مع الهواتف المحمولة مبنية بـ React.js ومنشورة عبر Vercel مع تكامل GitHub CI/CD.",
+    view_project: "عرض المشروع",
+    
+    // Contact Section
+    contact_title: "تواصل معي",
+    contact_subtitle: "مستعد للعمل معاً؟ دعنا نناقش مشروعك القادم",
+    contact_description: "لا تتردد في التواصل للمشاريع المستقلة أو فرص التدريب أو التعاون التقني.",
+    email_label: "البريد الإلكتروني",
+    whatsapp_label: "واتساب",
+    form_name: "الاسم",
+    form_email: "البريد الإلكتروني",
+    form_subject: "الموضوع",
+    form_message: "الرسالة",
+    form_send: "إرسال الرسالة",
+    form_success: "تم إرسال الرسالة بنجاح!",
+    form_error: "فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى.",
+    
+    // Footer
+    footer_tagline: "مطور مواقع إبداعي متكامل",
+    download_resume: "تحميل السيرة الذاتية",
+    footer_copyright: "© 2024 يوسف درويش. جميع الحقوق محفوظة.",
+    
+    // Loading
+    loading: "جاري التحميل...",
+  },
+  
+  hi: {
+    // Navigation
+    nav_home: "होम",
+    nav_about: "के बारे में",
+    nav_skills: "कौशल",
+    nav_experience: "अनुभव",
+    nav_projects: "प्रोजेक्ट्स",
+    nav_contact: "संपर्क",
+    
+    // Hero Section
+    hero_greeting: "नमस्ते, मैं हूं",
+    hero_name: "यूसुफ दरवेश",
+    hero_title: "रचनात्मक फुल-स्टैक डेवलपर",
+    hero_subtitle: "Odoo, Salesforce, React, और AI-संचालित समाधानों में विशेषज्ञ",
+    hero_description: "आधुनिक तकनीक और रचनात्मक नवाचार के साथ स्केलेबल वेब एप्लिकेशन और ERP सिस्टम का निर्माण।",
+    hero_contact: "संपर्क करें",
+    hero_portfolio: "प्रोजेक्ट्स देखें",
+    
+    // About Section
+    about_title: "मेरे बारे में",
+    about_subtitle: "आधुनिक तकनीक के साथ नवाचार समाधान बनाने का शौकीन",
+    about_heading: "व्यावसायिक सारांश",
+    about_description: "Odoo, Salesforce (Apex), React, और Render और Vercel जैसे आधुनिक deployment tools में हाथों-हाथ अनुभव के साथ एक रचनात्मक और भविष्य-उन्मुख फुल-स्टैक डेवलपर। बैकएंड APIs को क्लाइंट डेटा के साथ एकीकृत करने में विशेषज्ञ, मैं AI tools और automation की शक्ति का उपयोग करके अपने काम को लगातार सुधारता और आधुनिकीकरण करता हूं।",
+    about_description2: "मैं वास्तविक दुनिया के, स्केलेबल वेब एप्लिकेशन और ERP सिस्टम बनाता हूं जो वर्तमान तकनीकी रुझानों के साथ संरेखित होते हैं। मेरा काम नवाचार, दक्षता, और स्वच्छ डिज़ाइन से प्रेरित है। स्व-शिक्षा और फ्रीलांस काम की मजबूत नींव के साथ, मैं उन वातावरणों में फलता-फूलता हूं जिनमें निरंतर विकास और रचनात्मकता की आवश्यकता होती है।",
+    location_label: "स्थान",
+    location: "रियाद, सऊदी अरब",
+    experience_label: "अनुभव",
+    experience_years: "3+ वर्ष",
+    languages_label: "भाषाएं",
+    languages: "अरबी (मूल), अंग्रेजी (व्यावसायिक)",
+    
+    // Skills Section
+    skills_title: "मुख्य कौशल",
+    skills_subtitle: "तकनीकें और उपकरण जिनका उपयोग मैं विचारों को जीवन में लाने के लिए करता हूं",
+    frontend_title: "फ्रंटएंड डेवलपमेंट",
+    backend_title: "बैकएंड डेवलपमेंट",
+    cloud_title: "क्लाउड और DevOps",
+    
+    // Experience Section
+    experience_title: "अनुभव",
+    experience_subtitle: "मेरी व्यावसायिक यात्रा और उपलब्धियां",
+    exp1_title: "फ्रंटएंड डेवलपर",
+    exp1_period: "जनवरी 2022 - जनवरी 2024",
+    exp1_company: "मआक कंपनी (रिमोट)",
+    exp1_desc1: "React.js का उपयोग करके इंटरैक्टिव और रिस्पॉन्सिव UI डिज़ाइन किया",
+    exp1_desc2: "सहयोगी वर्कफ़लो में Git और GitHub के साथ कोड versioning का प्रबंधन किया",
+    exp1_desc3: "उपयोगकर्ता-केंद्रित सुविधाओं और डिज़ाइन अपडेट को लागू किया",
+    exp1_desc4: "फ्रंटएंड प्रदर्शन और कोडिंग उत्पादकता को अनुकूलित करने के लिए AI उपकरणों का सक्रिय रूप से उपयोग किया",
+    exp1_desc5: "Vercel जैसे आधुनिक होस्टिंग प्लेटफॉर्म के साथ वेब ऐप्स को एकीकृत किया",
+    
+    exp2_title: "फ्रीलांस Odoo और Salesforce डेवलपर",
+    exp2_period: "सितंबर 2021 - वर्तमान",
+    exp2_company: "रिमोट फ्रीलांस काम",
+    exp2_desc1: "HR, Sales, और Inventory को कवर करने वाले Odoo के लिए modules का निर्माण और अनुकूलन किया",
+    exp2_desc2: "Salesforce CRM को स्वचालित करने के लिए कस्टम Apex triggers और logic विकसित की",
+    exp2_desc3: "ग्राहक डेटा और संचालन को सुव्यवस्थित करने के लिए Odoo-Salesforce APIs को एकीकृत किया",
+    exp2_desc4: "संवेदनशील क्लाइंट जानकारी को संभालने के लिए सुरक्षित बैकएंड APIs विकसित किए",
+    exp2_desc5: "Render का उपयोग करके आधुनिक वेब सिस्टम तैनात किए, तेज़, स्केलेबल डिलीवरी सुनिश्चित की",
+    exp2_desc6: "परीक्षण, कोड जेनरेशन, और अनुकूलन के लिए AI उपकरणों के माध्यम से काम को बेहत बनाया",
+    
+    // Projects Section
+    projects_title: "विशेष प्रोजेक्ट्स",
+    projects_subtitle: "कुछ काम जिन पर मुझे सबसे ज्यादा गर्व है",
+    project1_title: "रिटेल ERP सिस्टम",
+    project1_desc: "एक रिटेल चेन के लिए Odoo में निर्मित पूर्ण ERP सिस्टम, जिसमें inventory, billing, employee tracking, और customer insights dashboards शामिल हैं।",
+    project2_title: "Odoo ↔ Salesforce सिंक टूल",
+    project2_desc: "Odoo और Salesforce के बीच API-आधारित एकीकरण जो leads, customers, और sales को real time में sync करता है।",
+    project3_title: "Vercel पर व्यक्तिगत पोर्टफोलियो",
+    project3_desc: "React.js के साथ निर्मित और GitHub CI/CD एकीकरण के साथ Vercel के माध्यम से deployed एक तेज़, आधुनिक, mobile-first पोर्टफोलियो।",
+    view_project: "प्रोजेक्ट देखें",
+    
+    // Contact Section
+    contact_title: "संपर्क करें",
+    contact_subtitle: "एक साथ काम करने के लिए तैयार हैं? आइए अपने अगले प्रोजेक्ट पर चर्चा करें",
+    contact_description: "फ्रीलांस प्रोजेक्ट्स, इंटर्नशिप के अवसरों, या तकनीकी सहयोग के लिए बेझिझक संपर्क करें।",
+    email_label: "ईमेल",
+    whatsapp_label: "व्हाट्सऐप",
+    form_name: "नाम",
+    form_email: "ईमेल",
+    form_subject: "विषय",
+    form_message: "संदेश",
+    form_send: "संदेश भेजें",
+    form_success: "संदेश सफलतापूर्वक भेजा गया!",
+    form_error: "संदेश भेजने में विफल। कृपया पुनः प्रयास करें।",
+    
+    // Footer
+    footer_tagline: "रचनात्मक फुल-स्टैक डेवलपर",
+    download_resume: "रिज्यूमे डाउनलोड करें",
+    footer_copyright: "© 2024 यूसुफ दरवेश। सभी अधिकार सुरक्षित।",
+    
+    // Loading
+    loading: "लोड हो रहा है...",
+  },
+  
+  fr: {
+    // Navigation
+    nav_home: "Accueil",
+    nav_about: "À propos",
+    nav_skills: "Compétences",
+    nav_experience: "Expérience",
+    nav_projects: "Projets",
+    nav_contact: "Contact",
+    
+    // Hero Section
+    hero_greeting: "Bonjour, je suis",
+    hero_name: "Youssef Darwish",
+    hero_title: "Développeur Full-Stack Créatif",
+    hero_subtitle: "Spécialisé en Odoo, Salesforce, React, et Solutions basées sur l'IA",
+    hero_description: "Construction d'applications web évolutives et de systèmes ERP avec la technologie moderne et l'innovation créative.",
+    hero_contact: "Me Contacter",
+    hero_portfolio: "Voir le Portfolio",
+    
+    // About Section
+    about_title: "À Propos de Moi",
+    about_subtitle: "Passionné par la création de solutions innovantes avec la technologie moderne",
+    about_heading: "Résumé Professionnel",
+    about_description: "Un développeur full-stack créatif et visionnaire avec une expérience pratique en Odoo, Salesforce (Apex), React, et des outils de déploiement modernes comme Render et Vercel. Spécialisé dans l'intégration des APIs backend avec les données clients, j'améliore et modernise continuellement mon travail en utilisant la puissance des outils IA et de l'automatisation.",
+    about_description2: "Je construis des applications web et des systèmes ERP évolutifs et réels qui s'alignent avec les tendances technologiques actuelles. Mon travail est guidé par l'innovation, l'efficacité et un design propre. Avec une base solide en auto-apprentissage et travail freelance, je prospère dans des environnements qui nécessitent une croissance et une créativité continues.",
+    location_label: "Localisation",
+    location: "Riyad, Arabie Saoudite",
+    experience_label: "Expérience",
+    experience_years: "3+ Ans",
+    languages_label: "Langues",
+    languages: "Arabe (Natif), Anglais (Professionnel)",
+    
+    // Skills Section
+    skills_title: "Compétences Principales",
+    skills_subtitle: "Technologies et outils que j'utilise pour donner vie aux idées",
+    frontend_title: "Développement Frontend",
+    backend_title: "Développement Backend",
+    cloud_title: "Cloud et DevOps",
+    
+    // Experience Section
+    experience_title: "Expérience",
+    experience_subtitle: "Mon parcours professionnel et mes réalisations",
+    exp1_title: "Développeur Frontend",
+    exp1_period: "Jan 2022 - Jan 2024",
+    exp1_company: "Société Ma'ak (À distance)",
+    exp1_desc1: "Conception d'interfaces utilisateur interactives et responsives avec React.js",
+    exp1_desc2: "Gestion du versioning de code avec Git et GitHub dans des workflows collaboratifs",
+    exp1_desc3: "Implémentation de fonctionnalités centrées sur l'utilisateur et de mises à jour de design",
+    exp1_desc4: "Utilisation active d'outils IA pour optimiser les performances frontend et la productivité de codage",
+    exp1_desc5: "Intégration d'applications web avec des plateformes d'hébergement modernes comme Vercel",
+    
+    exp2_title: "Développeur Freelance Odoo et Salesforce",
+    exp2_period: "Sep 2021 - Présent",
+    exp2_company: "Travail Freelance à Distance",
+    exp2_desc1: "Construction et personnalisation de modules pour Odoo couvrant les RH, Ventes et Inventaire",
+    exp2_desc2: "Développement de triggers Apex personnalisés et de logique pour automatiser Salesforce CRM",
+    exp2_desc3: "Intégration des APIs Odoo-Salesforce pour rationaliser les données clients et les opérations",
+    exp2_desc4: "Développement d'APIs backend sécurisées pour gérer les informations clients sensibles",
+    exp2_desc5: "Déploiement de systèmes web modernes utilisant Render, assurant une livraison rapide et évolutive",
+    exp2_desc6: "Amélioration du travail grâce aux outils IA pour les tests, la génération de code et l'optimisation",
+    
+    // Projects Section
+    projects_title: "Projets Vedettes",
+    projects_subtitle: "Quelques travaux dont je suis le plus fier",
+    project1_title: "Système ERP de Vente au Détail",
+    project1_desc: "Système ERP complet construit dans Odoo pour une chaîne de vente au détail, incluant inventaire, facturation, suivi des employés et tableaux de bord d'insights clients.",
+    project2_title: "Outil de Synchronisation Odoo ↔ Salesforce",
+    project2_desc: "Intégration basée sur API entre Odoo et Salesforce pour synchroniser les prospects, clients et ventes en temps réel.",
+    project3_title: "Portfolio Personnel sur Vercel",
+    project3_desc: "Un portfolio rapide, moderne et mobile-first construit avec React.js et déployé via Vercel avec intégration GitHub CI/CD.",
+    view_project: "Voir le Projet",
+    
+    // Contact Section
+    contact_title: "Me Contacter",
+    contact_subtitle: "Prêt à travailler ensemble ? Discutons de votre prochain projet",
+    contact_description: "N'hésitez pas à me contacter pour des projets freelance, des opportunités de stage ou des collaborations techniques.",
+    email_label: "Email",
+    whatsapp_label: "WhatsApp",
+    form_name: "Nom",
+    form_email: "Email",
+    form_subject: "Sujet",
+    form_message: "Message",
+    form_send: "Envoyer le Message",
+    form_success: "Message envoyé avec succès !",
+    form_error: "Échec de l'envoi du message. Veuillez réessayer.",
+    
+    // Footer
+    footer_tagline: "Développeur Full-Stack Créatif",
+    download_resume: "Télécharger le CV",
+    footer_copyright: "© 2024 Youssef Darwish. Tous droits réservés.",
+    
+    // Loading
+    loading: "Chargement...",
+  },
+};
+
+export type Language = keyof typeof translations;
+export type TranslationKey = keyof typeof translations.en;
