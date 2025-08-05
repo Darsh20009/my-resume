@@ -1,0 +1,262 @@
+🧑‍💼 الاسم والعنوان
+text
+Copy
+Edit
+YOUSSEF DARWISH
+Creative Full-Stack Developer | Odoo, Salesforce, React
+
+📍 Riyadh, Saudi Arabia  
+📞 +966 532 441 566  
+📧 youssefdarwish20009@gmail.com  
+🌐 Portfolio (optional): yourname.github.io
+🧭 نبذة شخصية (About Me)
+text
+Copy
+Edit
+I am a highly motivated and self-taught software developer with solid experience in building real-world solutions using Odoo, Salesforce Apex, Python, and React. With a strong background in both backend and frontend technologies, I have developed ERP systems, designed responsive websites, and integrated APIs for optimized business performance.
+
+I bring a unique blend of creativity and technical skill, proven by my work in both freelance and corporate environments. I am passionate about continuous learning, solving real problems, and building products that create impact.
+🛠️ الخبرة العملية (Work Experience)
+🔹 Frontend Developer – Company “Ma'ak”
+Remote, Riyadh – Jan 2022 to Jan 2024
+
+text
+Copy
+Edit
+Worked as a frontend and web interface designer using Git-based workflows and React framework.
+
+- Designed and developed responsive UI components using React.js.
+- Collaborated with backend developers to build seamless full-stack features.
+- Used Git and GitHub for version control and agile collaboration.
+- Improved performance of existing sites by optimizing components and reducing load time.
+- Participated in code reviews and product planning to ensure high quality and usability.
+🔹 Freelance Odoo & Salesforce Developer
+Remote – Sep 2021 to Present
+
+text
+Copy
+Edit
+Built multiple custom solutions for clients using Odoo and Salesforce, integrating frontend and backend logic to deliver business-specific automation.
+
+- Developed Odoo modules for HR, Sales, and Inventory Management.
+- Customized UI/UX for client-facing Odoo websites.
+- Created Salesforce Apex triggers and custom objects to automate workflows.
+- Integrated Odoo with Salesforce to unify data and streamline customer management.
+- Deployed REST APIs for mobile/web integration.
+🧠 المهارات الفنية (Technical Skills)
+text
+Copy
+Edit
+🧩 Odoo Development – module building, customization, website design  
+💻 Apex Programming – Salesforce automation, trigger & class design  
+🐍 Backend – Python, Flask, Odoo API  
+🌐 Frontend – React.js, HTML, JavaScript, Bootstrap  
+🗄️ Databases – PostgreSQL, MySQL  
+🔗 APIs – RESTful API integration  
+🔧 Tools – Git, GitHub, VS Code, Chrome DevTools  
+🌍 اللغات (Languages)
+text
+Copy
+Edit
+🔸 Arabic – Native  
+🔸 English – Professional Working Proficiency  
+🎓 التعليم (Education)
+text
+Copy
+Edit
+Currently a high school student (expected graduation: 2026)  
+Focused on real-world software development, with independent learning in:
+
+- Odoo ERP Development  
+- Salesforce Apex Programming  
+- React and Front-End Development  
+- Business & Technical Communication
+📦 مشاريع مميزة (Selected Projects)
+🛍️ Retail ERP System (Odoo)
+text
+Copy
+Edit
+Built a complete ERP for a retail shop using Odoo – included inventory, sales, invoicing, and POS customization.
+🌐 Personal Portfolio (React + GitHub Pages)
+text
+Copy
+Edit
+Developed a personal interactive portfolio site with React.js and hosted it using GitHub Pages, with version-controlled deployment via Git.
+📇 Salesforce-Odoo Integration
+text
+Copy
+Edit
+Created a synchronization system between Salesforce CRM and Odoo for seamless lead and sales tracking across both platforms.
+📩 الاهتمامات (Interests)
+text
+Copy
+Edit
+🔍 Self-learning through building real projects  
+💼 Business automation & optimization using tech  
+🧠 Exploring new frameworks & open-source projects  
+🛍️ Experience in retail marketing & sales  
+📬 تواصل معي (Contact Me)
+text
+Copy
+Edit
+Feel free to reach out to me for collaborations, freelance work, or internship opportunities.  
+I'm always looking for real-world challenges to solve and teams to grow with.
+هل تحب نسخة Word أو PDF؟
+أقدر أجهز لك نسخة Word أو PDF من الـCV ده عشان ترفقها في أي تقديمات أو تحطها ضمن الـPortfolio بتاعك.
+
+هل تحب أنقل الكلام ده لصفحات Oracle APEX معك الآن صفحة صفحة؟
+
+
+
+
+
+
+
+
+You said:
+هذه هي طرق التواصل ايميل youssefdarwish20009@gmail.com , whatsapp : +966532441566 
+
+
+ChatGPT said:
+Updated saved memory
+تم تحديث بيانات التواصل في السيرة الذاتية.
+
+الآن لديك:
+
+Email: youssefdarwish20009@gmail.com
+
+WhatsApp: +966532441566
+
+هل تحب أبدأ أنقل لك الكلام اللي فوق ده خطوة بخطوة داخل Oracle APEX (مثلاً نبدأ بالصفحة الرئيسية "Home")؟
+أو تفضل أجهز لك نسخة PDF/Word أولًا؟
+
+
+
+
+
+
+
+
+You said:
+لا اريدك اعادت كتابت السيرة الذاتيه مع كتابة ان عندي خبره في render , vercel ,  الباك اند المتبط بيبينات العملاء api  و اني متوافق و اطور شغلي الحالي بمساعدة ال ai  يعني موكب العصر
+
+
+ChatGPT said:
+ممتاز جدًا يا يوسف! دلوقتي هنكتب لك السيرة الذاتية كاملة من جديد بأسلوب احترافي وحديث، يعكس كل مهاراتك القديمة والجديدة، ويُظهر إنك مطوّر عصري يعتمد على الذكاء الاصطناعي، ويستخدم أدوات متقدمة مثل Render، Vercel، والـAPI المتصلة ببيانات العملاء.
+
+🧑‍💻 YOUSSEF DARWISH
+Creative Full-Stack Developer | Odoo, Salesforce, React, AI-Driven Solutions
+
+📍 Riyadh, Saudi Arabia
+📧 youssefdarwish20009@gmail.com
+📱 WhatsApp: +966532441566
+
+🧭 Professional Summary
+A creative and forward-thinking full-stack developer with hands-on experience in Odoo, Salesforce (Apex), React, and modern deployment tools like Render and Vercel. Specialized in integrating backend APIs with client data, I continuously improve and modernize my work using the power of AI tools and automation.
+
+I build real-world, scalable web applications and ERP systems that align with current tech trends. My work is driven by innovation, efficiency, and clean design. With a strong foundation in self-learning and freelance work, I thrive in environments that require continuous growth and creativity.
+
+🧠 Core Skills
+text
+Copy
+Edit
+🔧 Odoo ERP Development – Module customization, web apps, business workflows  
+🧩 Salesforce Apex – Custom logic, automation, CRM optimization  
+🌐 React.js – Dynamic UIs, component-based architecture  
+⚙️ Backend APIs – Flask, Odoo API, customer data handling  
+🚀 Deployment – Render, Vercel (automated CI/CD)  
+💾 Databases – PostgreSQL, MySQL  
+🔗 API Integration – REST APIs, third-party services  
+🧠 AI Tools – AI-assisted development (Copilot, ChatGPT, automation plugins)  
+🔀 Git & GitHub – Version control and collaboration
+🧪 Experience
+🔹 Frontend Developer – Ma'ak (Company)
+Remote – Jan 2022 to Jan 2024
+
+Designed interactive and responsive UIs using React.js
+
+Managed code versioning with Git & GitHub in collaborative workflows
+
+Implemented user-centered features and design updates
+
+Actively used AI tools to optimize frontend performance and coding productivity
+
+Integrated web apps with modern hosting platforms like Vercel
+
+🔹 Freelance Odoo & Salesforce Developer
+Remote – Sep 2021 to Present
+
+Built and customized modules for Odoo covering HR, Sales, and Inventory
+
+Developed custom Apex triggers and logic for automating Salesforce CRM
+
+Integrated Odoo-Salesforce APIs to streamline customer data and operations
+
+Developed secure backend APIs for handling sensitive client information
+
+Deployed modern web systems using Render, ensuring fast, scalable delivery
+
+Enhanced work through AI tools for testing, code generation, and optimization
+
+🧪 Selected Projects
+🛍️ Retail ERP System
+text
+Copy
+Edit
+Full ERP system built in Odoo for a retail chain, including inventory, billing, employee tracking, and customer insights dashboards.
+🔄 Odoo ↔ Salesforce Sync Tool
+text
+Copy
+Edit
+API-based integration between Odoo and Salesforce to sync leads, customers, and sales in real time.
+🌐 Personal Portfolio on Vercel
+text
+Copy
+Edit
+A fast, modern, mobile-first portfolio built with React.js and deployed via Vercel with GitHub CI/CD integration.
+🎓 Education
+text
+Copy
+Edit
+High School Student – Ongoing (Expected Graduation: 2026)
+
+Actively pursuing professional development through online learning, real-life freelance projects, and self-built applications.
+🌍 Languages
+text
+Copy
+Edit
+Arabic – Native  
+English – Proficient (Professional Level)
+🚀 Tech Tools & Platforms
+React, Bootstrap, Tailwind
+
+Flask, Python, Odoo API
+
+Salesforce (Apex)
+
+Render, Vercel, GitHub Pages
+
+PostgreSQL, MySQL
+
+REST APIs
+
+Git & GitHub
+
+AI Tools: ChatGPT, GitHub Copilot, automation extensions
+
+💡 Personal Highlights
+Passionate about modern technology, AI integration, and open-source tools
+
+Experience in marketing and retail sales helped me build user-friendly systems
+
+Always learning, adapting, and evolving with the latest in web and backend development
+
+📬 Contact
+Feel free to reach out for:
+🔹 Freelance projects
+🔹 Internship opportunities
+🔹 Tech collaborations
+
+📧 Email: youssefdarwish20009@gmail.com
+📱 WhatsApp: +966532441566
+
