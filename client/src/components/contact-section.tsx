@@ -83,13 +83,13 @@ export function ContactSection() {
     {
       icon: FaGithub,
       name: "GitHub",
-      href: "#",
+      href: "https://github.com/Darsh20009",
       color: "hover:text-gray-900 dark:hover:text-gray-100",
     },
     {
       icon: FaLinkedin,
       name: "LinkedIn", 
-      href: "#",
+      href: "https://www.linkedin.com/in/youssef-darwish-5056672bb",
       color: "hover:text-blue-600",
     },
   ];
