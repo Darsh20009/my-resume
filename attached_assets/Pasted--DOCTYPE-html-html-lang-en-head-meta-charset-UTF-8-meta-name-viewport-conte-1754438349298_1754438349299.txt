@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youssef Darwish - Creative CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding-bottom: 50px;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100px;
+      width: 200%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent);
+      animation: slideBg 10s linear infinite;
+    }
+
+    @keyframes slideBg {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      color: #00e6e6;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #00e6e6;
+      border-bottom: 2px solid #00e6e6;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .job, .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      border-left: 4px solid #00e6e6;
+      border-radius: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Youssef Darwish</h1>
+    <p>Creative Full-Stack Developer | Odoo, Salesforce, React, AI-Driven Solutions</p>
+    <p>📍 Riyadh, Saudi Arabia | 📧 youssefdarwish20009@gmail.com | 📱 +966532441566</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>I am a self-taught, passionate full-stack developer specializing in modern tools like Odoo, Salesforce Apex, React, and AI-powered development. I integrate backend APIs with real customer data and deploy projects using tools like Render and Vercel. I constantly evolve my workflow with AI tools to stay ahead of the curve and deliver creative, scalable web solutions.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Odoo ERP Development – Modules, Web Apps, Customizations</li>
+        <li>Salesforce Apex – Automation, Custom Objects, CRM Logic</li>
+        <li>React.js – Frontend UI Components, Single Page Applications</li>
+        <li>Python & Flask – Backend Logic, Secure REST APIs</li>
+        <li>Database Management – PostgreSQL, MySQL</li>
+        <li>CI/CD Deployment – Render, Vercel, GitHub Pages</li>
+        <li>Secure API Integration – Customer Data, CRM Integration</li>
+        <li>AI Tools – GitHub Copilot, ChatGPT, Test Generators</li>
+        <li>Version Control – Git, GitHub, Collaborative Branching</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="job">
+        <strong>Frontend Developer – Ma'ak Company (Jan 2022 – Jan 2024)</strong>
+        <ul>
+          <li>Developed interactive, responsive UI with React.js</li>
+          <li>Implemented Git-based workflows for team collaboration</li>
+          <li>Automated deployment via Vercel with GitHub Actions</li>
+          <li>Optimized UX/UI using AI design and code tools</li>
+        </ul>
+      </div>
+      <div class="job">
+        <strong>Freelance Odoo & Salesforce Developer (Sep 2021 – Present)</strong>
+        <ul>
+          <li>Designed Odoo modules for retail, HR, and inventory systems</li>
+          <li>Built Salesforce Apex triggers and logic for CRM automation</li>
+          <li>Connected Salesforce & Odoo via secure REST APIs</li>
+          <li>Handled real customer data with encryption and security</li>
+          <li>Deployed backends using Render for scalability and speed</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <strong>Retail ERP (Odoo)</strong>
+        <p>Custom ERP solution for retail clients including sales, POS, stock management, and employee performance tracking.</p>
+      </div>
+      <div class="project">
+        <strong>Salesforce ↔ Odoo Integration</strong>
+        <p>Live API sync between Odoo and Salesforce platforms with real-time data updates and automation triggers.</p>
+      </div>
+      <div class="project">
+        <strong>React Portfolio (Vercel)</strong>
+        <p>Personal website built with React.js, styled with Tailwind, and hosted on Vercel with continuous deployment from GitHub.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p>High School Student – Expected Graduation: 2026</p>
+      <p>Focused on real-world software development, building full applications, and continuously learning new technologies in AI and web development.</p>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>Arabic – Native</li>
+        <li>English – Professional Proficiency</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>📧 Email: youssefdarwish20009@gmail.com</p>
+      <p>📱 WhatsApp: +966532441566</p>
+      <p>I’m open to freelance work, internships, or any exciting tech collaborations. Let’s build something amazing!</p>
+    </section>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Youssef Darwish – Designed with 💡 + 🧠
+  </div>
+</body>
+</html>
