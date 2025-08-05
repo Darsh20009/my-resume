@@ -169,8 +169,29 @@ export function ContactSection() {
               <div className="flex flex-col gap-2">
                 <Button 
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-                  onClick={() => {
-                    window.open('/youssef-darwish-resume.html', '_blank');
+                  onClick={async () => {
+                    try {
+                      const resumeUrl = '/youssef-darwish-resume.html';
+                      
+                      // Test if file exists
+                      const response = await fetch(resumeUrl, { method: 'HEAD' });
+                      if (!response.ok) {
+                        throw new Error('File not found');
+                      }
+                      
+                      window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+                      toast({
+                        title: "تم فتح السيرة الذاتية",
+                        description: "تم فتح السيرة الذاتية في نافذة جديدة",
+                      });
+                    } catch (error) {
+                      console.error('Resume file error:', error);
+                      toast({
+                        title: "خطأ",
+                        description: "لم يتم العثور على ملف السيرة الذاتية",
+                        variant: "destructive",
+                      });
+                    }
                   }}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
@@ -180,12 +201,25 @@ export function ContactSection() {
                   variant="outline"
                   className="w-full"
                   onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = '/youssef-darwish-resume.html';
-                    link.download = 'Youssef-Darwish-Resume.html';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                    try {
+                      const link = document.createElement('a');
+                      link.href = '/youssef-darwish-resume.html';
+                      link.download = 'Youssef-Darwish-Resume.html';
+                      link.setAttribute('target', '_blank');
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                      toast({
+                        title: "بدء التحميل",
+                        description: "تم بدء تحميل السيرة الذاتية",
+                      });
+                    } catch (error) {
+                      toast({
+                        title: "خطأ",
+                        description: "حدث خطأ في تحميل السيرة الذاتية",
+                        variant: "destructive",
+                      });
+                    }
                   }}
                 >
                   <Download className="mr-2 h-4 w-4" />
