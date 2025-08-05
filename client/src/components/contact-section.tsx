@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { Mail, MessageSquare, MapPin, Send, Download, ExternalLink } from "lucide-react";
+import { Mail, MessageSquare, MapPin, Download, ExternalLink } from "lucide-react";
 import { FaWhatsapp, FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface ContactFormData {
@@ -26,30 +24,25 @@ export function ContactSection() {
     message: "",
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Success!",
-        description: t("form_success"),
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: t("form_error"),
-        variant: "destructive",
-      });
-    },
-  });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    contactMutation.mutate(formData);
+    
+    // Create WhatsApp message
+    const whatsappMessage = `*New Contact Message*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n\n*Message:*\n${formData.message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/966532441566?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message
+    toast({
+      title: "Success!",
+      description: t("form_success"),
+    });
+    
+    // Clear form
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -248,20 +241,10 @@ export function ContactSection() {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90"
-                disabled={contactMutation.isPending}
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white"
               >
-                {contactMutation.isPending ? (
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
-                    Sending...
-                  </div>
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" />
-                    {t("form_send")}
-                  </>
-                )}
+                <FaWhatsapp className="mr-2 h-4 w-4" />
+                {t("form_send")} via WhatsApp
               </Button>
             </form>
           </div>
