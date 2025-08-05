@@ -160,27 +160,38 @@ export function ContactSection() {
               </div>
             </div>
             
-            {/* Download Resume */}
+            {/* View/Download Resume */}
             <div className="p-6 bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-xl border">
-              <h4 className="font-semibold mb-2 text-primary">Download Resume</h4>
+              <h4 className="font-semibold mb-2 text-primary">السيرة الذاتية</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                Get a detailed overview of my experience and skills
+                اطلع على نظرة شاملة عن خبراتي ومهاراتي التقنية
               </p>
-              <Button 
-                className="w-full"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/youssef-darwish-resume.html';
-                  link.download = 'Youssef-Darwish-Resume.html';
-                  link.target = '_blank';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                {t("download_resume")}
-              </Button>
+              <div className="flex flex-col gap-2">
+                <Button 
+                  className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
+                  onClick={() => {
+                    window.open('/youssef-darwish-resume.html', '_blank');
+                  }}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  عرض السيرة الذاتية
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/youssef-darwish-resume.html';
+                    link.download = 'Youssef-Darwish-Resume.html';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  تحميل كملف HTML
+                </Button>
+              </div>
             </div>
           </div>
           
