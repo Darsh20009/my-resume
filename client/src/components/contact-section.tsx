@@ -162,9 +162,9 @@ export function ContactSection() {
 
             {/* View/Download Resume */}
             <div className="p-6 bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-xl border">
-              <h4 className="font-semibold mb-2 text-primary">السيرة الذاتية</h4>
+              <h4 className="font-semibold mb-2 text-primary">{t("resume_title")}</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                اطلع على نظرة شاملة عن خبراتي ومهاراتي التقنية
+                {t("resume_description")}
               </p>
               <div className="flex flex-col gap-2">
                 <Button 
@@ -197,7 +197,7 @@ export function ContactSection() {
                   }}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  عرض السيرة الذاتية الإبداعية
+                  {t("resume_view")}
                 </Button>
                 <Button 
                   variant="outline"
@@ -260,7 +260,7 @@ export function ContactSection() {
                   }}
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  تحميل السيرة الإبداعية
+                  {t("resume_download")}
                 </Button>
               </div>
             </div>

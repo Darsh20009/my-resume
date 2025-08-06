@@ -91,6 +91,10 @@ export const translations = {
     download_error_desc: "An error occurred while downloading the resume, please try again",
     resume_error: "An error occurred while opening the resume",
     error: "Error",
+    resume_title: "Resume",
+    resume_description: "Get a comprehensive overview of my experience and technical skills",
+    resume_view: "View Creative Resume",
+    resume_download: "Download Creative Resume",
     
     // Footer
     footer_tagline: "Creative Full-Stack Developer",
@@ -193,6 +197,10 @@ export const translations = {
     download_error_desc: "حدث خطأ في تحميل السيرة الذاتية، يرجى المحاولة مرة أخرى",
     resume_error: "حدث خطأ في فتح السيرة الذاتية",
     error: "خطأ",
+    resume_title: "السيرة الذاتية",
+    resume_description: "اطلع على نظرة شاملة عن خبراتي ومهاراتي التقنية",
+    resume_view: "عرض السيرة الذاتية الإبداعية",
+    resume_download: "تحميل السيرة الإبداعية",
     
     // Footer
     footer_tagline: "مطور مواقع إبداعي متكامل",
@@ -295,6 +303,10 @@ export const translations = {
     download_error_desc: "रिज्यूमे डाउनलोड करते समय एक एरर हुआ, कृपया पुनः प्रयास करें",
     resume_error: "रिज्यूमे खोलते समय एक एरर हुआ",
     error: "एरर",
+    resume_title: "रिज्यूमे",
+    resume_description: "मेरे अनुभव और तकनीकी कौशल का व्यापक अवलोकन प्राप्त करें",
+    resume_view: "रचनात्मक रिज्यूमे देखें",
+    resume_download: "रचनात्मक रिज्यूमे डाउनलोड करें",
     
     // Footer
     footer_tagline: "रचनात्मक फुल-स्टैक डेवलपर",
@@ -397,6 +409,10 @@ export const translations = {
     download_error_desc: "Une erreur s'est produite lors du téléchargement du CV, veuillez réessayer",
     resume_error: "Une erreur s'est produite lors de l'ouverture du CV",
     error: "Erreur",
+    resume_title: "CV",
+    resume_description: "Obtenez un aperçu complet de mon expérience et de mes compétences techniques",
+    resume_view: "Voir le CV Créatif",
+    resume_download: "Télécharger le CV Créatif",
     
     // Footer
     footer_tagline: "Développeur Full-Stack Créatif",
