@@ -171,7 +171,7 @@ export function ContactSection() {
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
                   onClick={() => {
                     try {
-                      const resumeUrl = '/youssef-darwish-resume.html';
+                      const resumeUrl = '/resume.html';
                       window.open(resumeUrl, '_blank', 'noopener,noreferrer');
                       toast({
                         title: "تم فتح السيرة الذاتية",
@@ -195,7 +195,7 @@ export function ContactSection() {
                   className="w-full hover:bg-primary/10"
                   onClick={async () => {
                     try {
-                      const resumeUrl = '/youssef-darwish-resume.html';
+                      const resumeUrl = '/resume.html';
                       
                       // Fetch the resume content
                       const response = await fetch(resumeUrl);

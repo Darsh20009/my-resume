@@ -3,8 +3,26 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import path from "path";
+import fs from "fs";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve resume file specifically
+  app.get("/youssef-darwish-resume.html", (req, res) => {
+    try {
+      const resumePath = path.resolve(import.meta.dirname, "..", "public", "youssef-darwish-resume.html");
+      if (fs.existsSync(resumePath)) {
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        res.sendFile(resumePath);
+      } else {
+        res.status(404).json({ error: "Resume file not found" });
+      }
+    } catch (error) {
+      console.error("Resume serving error:", error);
+      res.status(500).json({ error: "Failed to serve resume" });
+    }
+  });
+
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {
