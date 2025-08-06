@@ -83,6 +83,14 @@ export const translations = {
     form_send: "Send Message",
     form_success: "Message sent successfully!",
     form_error: "Failed to send message. Please try again.",
+    resume_opened: "Resume Opened",
+    resume_opened_desc: "Creative resume opened in a new window",
+    download_started: "Download Started ✨",
+    download_success: "Creative resume downloaded successfully",
+    download_error: "Download Error",
+    download_error_desc: "An error occurred while downloading the resume, please try again",
+    resume_error: "An error occurred while opening the resume",
+    error: "Error",
     
     // Footer
     footer_tagline: "Creative Full-Stack Developer",
@@ -177,6 +185,14 @@ export const translations = {
     form_send: "إرسال الرسالة",
     form_success: "تم إرسال الرسالة بنجاح!",
     form_error: "فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى.",
+    resume_opened: "تم فتح السيرة الذاتية",
+    resume_opened_desc: "تم فتح السيرة الذاتية الإبداعية في نافذة جديدة",
+    download_started: "تم بدء التحميل ✨",
+    download_success: "تم تحميل السيرة الذاتية الإبداعية بنجاح",
+    download_error: "خطأ في التحميل",
+    download_error_desc: "حدث خطأ في تحميل السيرة الذاتية، يرجى المحاولة مرة أخرى",
+    resume_error: "حدث خطأ في فتح السيرة الذاتية",
+    error: "خطأ",
     
     // Footer
     footer_tagline: "مطور مواقع إبداعي متكامل",
@@ -271,6 +287,14 @@ export const translations = {
     form_send: "संदेश भेजें",
     form_success: "संदेश सफलतापूर्वक भेजा गया!",
     form_error: "संदेश भेजने में विफल। कृपया पुनः प्रयास करें।",
+    resume_opened: "रिज्यूमे खोला गया",
+    resume_opened_desc: "रचनात्मक रिज्यूमे नई विंडो में खोला गया",
+    download_started: "डाउनलोड शुरू हुआ ✨",
+    download_success: "रचनात्मक रिज्यूमे सफलतापूर्वक डाउनलोड हुआ",
+    download_error: "डाउनलोड एरर",
+    download_error_desc: "रिज्यूमे डाउनलोड करते समय एक एरर हुआ, कृपया पुनः प्रयास करें",
+    resume_error: "रिज्यूमे खोलते समय एक एरर हुआ",
+    error: "एरर",
     
     // Footer
     footer_tagline: "रचनात्मक फुल-स्टैक डेवलपर",
@@ -365,6 +389,14 @@ export const translations = {
     form_send: "Envoyer le Message",
     form_success: "Message envoyé avec succès !",
     form_error: "Échec de l'envoi du message. Veuillez réessayer.",
+    resume_opened: "CV Ouvert",
+    resume_opened_desc: "CV créatif ouvert dans une nouvelle fenêtre",
+    download_started: "Téléchargement Commencé ✨",
+    download_success: "CV créatif téléchargé avec succès",
+    download_error: "Erreur de Téléchargement",
+    download_error_desc: "Une erreur s'est produite lors du téléchargement du CV, veuillez réessayer",
+    resume_error: "Une erreur s'est produite lors de l'ouverture du CV",
+    error: "Erreur",
     
     // Footer
     footer_tagline: "Développeur Full-Stack Créatif",

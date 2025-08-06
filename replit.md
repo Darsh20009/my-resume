@@ -11,6 +11,8 @@ The website serves as a professional showcase highlighting expertise in ERP syst
 Preferred communication style: Simple, everyday language.
 Contact form integration: Messages should be sent directly to WhatsApp (+966532441566) instead of email
 Resume download: Users should be able to download an HTML/CSS creative resume file
+Language-specific resumes: Resume files are now dynamically served based on current language selection (Arabic, English, Hindi, French)
+Multi-language support: Website is 100% compatible with all supported languages including Arabic RTL support
 
 ## System Architecture
 

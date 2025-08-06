@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Darwish - Creative Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6366f1 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+        
+        .floating-elements::before {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            top: 20%;
+            left: 10%;
+            animation-delay: -5s;
+        }
+        
+        .floating-elements::after {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #06d6a0, #ffd60a);
+            top: 60%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(20px) rotate(240deg); }
+        }
+        
+        .resume-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            animation: slideInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 2;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06d6a0, #ffd60a, #ff006e);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4338ca 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
+            );
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            z-index: 1;
+            animation: profilePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes profilePulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); }
+        }
+        
+        .name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(45deg, #ffffff, #f0f9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+            min-height: 800px;
+        }
+        
+        .sidebar {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 50px 40px;
+            border-right: 1px solid #e2e8f0;
+        }
+        
+        .content {
+            padding: 50px 40px;
+            background: white;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #1e293b;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-level {
+            font-size: 0.9rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 500;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border-radius: 15px;
+            border-left: 4px solid #3b82f6;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover, .project-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-title, .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .company, .project-tech {
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .description {
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(45deg, #e0e7ff, #c7d2fe);
+            color: #3730a3;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header {
+                padding: 50px 20px;
+            }
+            
+            .sidebar, .content {
+                padding: 30px 20px;
+            }
+        }
+        
+        .print-only {
+            display: none;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .floating-elements,
+            .download-btn {
+                display: none;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                background: white;
+            }
+            
+            .print-only {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements"></div>
+    
+    <div class="resume-container">
+        <header class="header">
+            <div class="profile-image">
+                <i class="fas fa-code"></i>
+            </div>
+            <h1 class="name">Youssef Darwish</h1>
+            <p class="title">Creative Full-Stack Developer | Odoo, Salesforce, React, AI-Driven Solutions</p>
+            <div class="contact-info">
+                <a href="mailto:youssefdarwish20009@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>youssefdarwish20009@gmail.com</span>
+                </a>
+                <a href="https://wa.me/966532441566" class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+966532441566</span>
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Riyadh, Saudi Arabia</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-cube" style="color: #8b5cf6;"></i>
+                            Odoo ERP
+                        </div>
+                        <div class="skill-level">Expert</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-salesforce" style="color: #06d6a0;"></i>
+                            Salesforce Apex
+                        </div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-react" style="color: #3b82f6;"></i>
+                            React.js
+                        </div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-database" style="color: #ffd60a;"></i>
+                            PostgreSQL
+                        </div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-python" style="color: #8b5cf6;"></i>
+                            Python
+                        </div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-cloud" style="color: #06d6a0;"></i>
+                            Cloud Deploy
+                        </div>
+                        <div class="skill-level">Advanced</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="language-item">
+                        <span><i class="fas fa-globe"></i> Arabic</span>
+                        <span style="color: #3b82f6; font-weight: 600;">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span><i class="fas fa-globe"></i> English</span>
+                        <span style="color: #3b82f6; font-weight: 600;">Professional</span>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Tools & Technologies</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Git & GitHub</span>
+                        <span class="tech-tag">Render</span>
+                        <span class="tech-tag">Vercel</span>
+                        <span class="tech-tag">ChatGPT</span>
+                        <span class="tech-tag">GitHub Copilot</span>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="content">
+                <section class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="description">
+                        Creative and innovative full-stack developer with hands-on experience in Odoo, Salesforce (Apex), React, and modern deployment tools like Render and Vercel. 
+                        Specialized in integrating backend APIs with customer data, and I continuously enhance and refine my work using the power of AI tools and automation.
+                        <br><br>
+                        I build scalable, real-world web applications and ERP systems that align with current technology trends. 
+                        My work is driven by innovation, efficiency, and clean design. With a strong foundation in self-learning and freelance work, I thrive in environments that demand continuous growth and creativity.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h3 class="job-title">Freelance Odoo & Salesforce Developer</h3>
+                        <div class="company">Self-Employed - Remote</div>
+                        <div class="duration">September 2021 - Present</div>
+                        <p class="description">
+                            • Built and customized Odoo modules covering HR, Sales, and Inventory<br>
+                            • Developed custom Apex triggers and logic to automate Salesforce CRM<br>
+                            • Integrated APIs between Odoo-Salesforce to streamline customer data and operations<br>
+                            • Developed secure backend APIs to handle sensitive customer information<br>
+                            • Deployed modern web systems using Render to ensure fast and scalable delivery<br>
+                            • Enhanced work through AI tools for testing, code generation, and optimization
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Odoo</span>
+                            <span class="tech-tag">Salesforce Apex</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3 class="job-title">Frontend Developer</h3>
+                        <div class="company">Maak Company</div>
+                        <div class="duration">January 2022 - January 2024</div>
+                        <p class="description">
+                            • Designed interactive and responsive interfaces using React.js<br>
+                            • Managed code versions with Git & GitHub in collaborative workflow<br>
+                            • Implemented user-focused features and design updates<br>
+                            • Actively used AI tools to improve frontend performance and programming productivity<br>
+                            • Integrated web applications with modern hosting platforms like Vercel
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Featured Projects</h2>
+                    
+                    <div class="project-item">
+                        <h3 class="project-title">🛍️ Retail ERP System</h3>
+                        <div class="project-tech">Odoo ERP System</div>
+                        <p class="description">
+                            Complete ERP system built in Odoo for a retail chain, including inventory, invoicing, employee tracking, and customer insight dashboards.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Odoo</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 class="project-title">🔄 Odoo ↔ Salesforce Sync Tool</h3>
+                        <div class="project-tech">API Integration Tool</div>
+                        <p class="description">
+                            API-based integration between Odoo and Salesforce for real-time synchronization of leads, customers, and sales.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Salesforce API</span>
+                            <span class="tech-tag">Odoo API</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">REST</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 class="project-title">🌐 Personal Portfolio on Vercel</h3>
+                        <div class="project-tech">Modern Portfolio Website</div>
+                        <p class="description">
+                            Fast, modern mobile-first portfolio built with React.js and deployed via Vercel with GitHub CI/CD integration.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Vercel</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">GitHub</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="experience-item">
+                        <h3 class="job-title">High School Student</h3>
+                        <div class="company">Ongoing (Expected Graduation: 2026)</div>
+                        <p class="description">
+                            Actively pursuing professional development through online learning, real-world freelance projects, and self-built applications.
+                        </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 Youssef Darwish - Creative Full-Stack Developer | Developed with love and creativity 💜</p>
+            <p class="print-only">Contact: youssefdarwish20009@gmail.com | +966532441566</p>
+        </footer>
+    </div>
+
+    <button class="download-btn" onclick="window.print()" title="Print or Save as PDF">
+        <i class="fas fa-download"></i>
+    </button>
+
+    <script>
+        // Add interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill bars on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add hover effects
+            document.querySelectorAll('.skill-item, .experience-item, .project-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -15,7 +15,7 @@ interface ContactFormData {
 }
 
 export function ContactSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -171,17 +171,26 @@ export function ContactSection() {
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
                   onClick={() => {
                     try {
-                      const resumeUrl = '/resume.html';
+                      const getResumeUrl = () => {
+                        switch (language) {
+                          case 'ar': return '/resume.html';
+                          case 'en': return '/resume-en.html';
+                          case 'hi': return '/resume-hi.html';
+                          case 'fr': return '/resume-fr.html';
+                          default: return '/resume-en.html';
+                        }
+                      };
+                      const resumeUrl = getResumeUrl();
                       window.open(resumeUrl, '_blank', 'noopener,noreferrer');
                       toast({
-                        title: "تم فتح السيرة الذاتية",
-                        description: "تم فتح السيرة الذاتية الإبداعية في نافذة جديدة",
+                        title: t("resume_opened"),
+                        description: t("resume_opened_desc"),
                       });
                     } catch (error) {
                       console.error('Resume file error:', error);
                       toast({
-                        title: "خطأ",
-                        description: "حدث خطأ في فتح السيرة الذاتية",
+                        title: t("error"),
+                        description: t("resume_error"),
                         variant: "destructive",
                       });
                     }
@@ -195,7 +204,26 @@ export function ContactSection() {
                   className="w-full hover:bg-primary/10"
                   onClick={async () => {
                     try {
-                      const resumeUrl = '/resume.html';
+                      const getResumeUrl = () => {
+                        switch (language) {
+                          case 'ar': return '/resume.html';
+                          case 'en': return '/resume-en.html';
+                          case 'hi': return '/resume-hi.html';
+                          case 'fr': return '/resume-fr.html';
+                          default: return '/resume-en.html';
+                        }
+                      };
+                      const resumeUrl = getResumeUrl();
+                      const getFileName = () => {
+                        switch (language) {
+                          case 'ar': return 'Youssef-Darwish-Creative-Resume-AR.html';
+                          case 'en': return 'Youssef-Darwish-Creative-Resume-EN.html';
+                          case 'hi': return 'Youssef-Darwish-Creative-Resume-HI.html';
+                          case 'fr': return 'Youssef-Darwish-Creative-Resume-FR.html';
+                          default: return 'Youssef-Darwish-Creative-Resume-EN.html';
+                        }
+                      };
+                      const fileName = getFileName();
                       
                       // Fetch the resume content
                       const response = await fetch(resumeUrl);
@@ -209,7 +237,7 @@ export function ContactSection() {
                       
                       const link = document.createElement('a');
                       link.href = url;
-                      link.download = 'Youssef-Darwish-Creative-Resume.html';
+                      link.download = fileName;
                       document.body.appendChild(link);
                       link.click();
                       document.body.removeChild(link);
@@ -218,14 +246,14 @@ export function ContactSection() {
                       setTimeout(() => URL.revokeObjectURL(url), 100);
                       
                       toast({
-                        title: "تم بدء التحميل ✨",
-                        description: "تم تحميل السيرة الذاتية الإبداعية بنجاح",
+                        title: t("download_started"),
+                        description: t("download_success"),
                       });
                     } catch (error) {
                       console.error('Download error:', error);
                       toast({
-                        title: "خطأ في التحميل",
-                        description: "حدث خطأ في تحميل السيرة الذاتية، يرجى المحاولة مرة أخرى",
+                        title: t("download_error"),
+                        description: t("download_error_desc"),
                         variant: "destructive",
                       });
                     }
