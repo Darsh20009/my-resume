@@ -169,61 +169,70 @@ export function ContactSection() {
               <div className="flex flex-col gap-2">
                 <Button 
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-                  onClick={async () => {
+                  onClick={() => {
                     try {
                       const resumeUrl = '/youssef-darwish-resume.html';
-
-                      // Test if file exists
-                      const response = await fetch(resumeUrl, { method: 'HEAD' });
-                      if (!response.ok) {
-                        throw new Error('File not found');
-                      }
-
                       window.open(resumeUrl, '_blank', 'noopener,noreferrer');
                       toast({
                         title: "تم فتح السيرة الذاتية",
-                        description: "تم فتح السيرة الذاتية في نافذة جديدة",
+                        description: "تم فتح السيرة الذاتية الإبداعية في نافذة جديدة",
                       });
                     } catch (error) {
                       console.error('Resume file error:', error);
                       toast({
                         title: "خطأ",
-                        description: "لم يتم العثور على ملف السيرة الذاتية",
+                        description: "حدث خطأ في فتح السيرة الذاتية",
                         variant: "destructive",
                       });
                     }
                   }}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  عرض السيرة الذاتية
+                  عرض السيرة الذاتية الإبداعية
                 </Button>
                 <Button 
                   variant="outline"
-                  className="w-full"
-                  onClick={() => {
+                  className="w-full hover:bg-primary/10"
+                  onClick={async () => {
                     try {
+                      const resumeUrl = '/youssef-darwish-resume.html';
+                      
+                      // Fetch the resume content
+                      const response = await fetch(resumeUrl);
+                      if (!response.ok) {
+                        throw new Error('Failed to fetch resume');
+                      }
+                      
+                      const htmlContent = await response.text();
+                      const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+                      const url = URL.createObjectURL(blob);
+                      
                       const link = document.createElement('a');
-                      link.href = '/youssef-darwish-resume.html';
-                      link.download = 'Youssef-Darwish-Resume.html';
-                      link.setAttribute('target', '_blank');
+                      link.href = url;
+                      link.download = 'Youssef-Darwish-Creative-Resume.html';
                       document.body.appendChild(link);
                       link.click();
                       document.body.removeChild(link);
+                      
+                      // Clean up the URL object
+                      setTimeout(() => URL.revokeObjectURL(url), 100);
+                      
                       toast({
-                        title: "بدء التحميل",
-                        description: "تم بدء تحميل السيرة الذاتية",
+                        title: "تم بدء التحميل ✨",
+                        description: "تم تحميل السيرة الذاتية الإبداعية بنجاح",
                       });
                     } catch (error) {
+                      console.error('Download error:', error);
                       toast({
-                        title: "خطأ",
-                        description: "حدث خطأ في تحميل السيرة الذاتية",
+                        title: "خطأ في التحميل",
+                        description: "حدث خطأ في تحميل السيرة الذاتية، يرجى المحاولة مرة أخرى",
                         variant: "destructive",
                       });
                     }
                   }}
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  تحميل كملف HTML
+                  تحميل السيرة الإبداعية
                 </Button>
               </div>
             </div>

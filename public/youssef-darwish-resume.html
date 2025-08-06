@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>يوسف درويش - مطور برمجيات متكامل</title>
+    <title>يوسف درويش - مطور برمجيات إبداعي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -18,30 +17,76 @@
             font-family: 'Cairo', 'Inter', sans-serif;
             line-height: 1.6;
             color: #1f2937;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6366f1 100%);
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+        
+        .floating-elements::before {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            top: 20%;
+            left: 10%;
+            animation-delay: -5s;
+        }
+        
+        .floating-elements::after {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #06d6a0, #ffd60a);
+            top: 60%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(20px) rotate(240deg); }
         }
         
         .resume-container {
             max-width: 1400px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
             border-radius: 25px;
-            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             position: relative;
-            animation: fadeInUp 1s ease-out;
+            animation: slideInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 2;
         }
         
-        @keyframes fadeInUp {
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(100px) scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
         
@@ -51,12 +96,18 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 10px;
+            height: 8px;
             background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06d6a0, #ffd60a, #ff006e);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
         
         .header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4338ca 100%);
             color: white;
             padding: 80px 40px;
             text-align: center;
@@ -74,448 +125,285 @@
             background: repeating-linear-gradient(
                 45deg,
                 transparent,
-                transparent 15px,
-                rgba(255,255,255,0.03) 15px,
-                rgba(255,255,255,0.03) 30px
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
             );
-            animation: movePattern 25s linear infinite;
+            animation: backgroundMove 20s linear infinite;
         }
         
-        @keyframes movePattern {
+        @keyframes backgroundMove {
             0% { transform: translate(-50%, -50%) rotate(0deg); }
             100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
         
         .profile-image {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 8px solid rgba(255,255,255,0.3);
+            border: 5px solid rgba(255, 255, 255, 0.3);
             margin: 0 auto 30px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 70px;
-            color: white;
+            font-size: 3rem;
             position: relative;
-            z-index: 2;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            z-index: 1;
+            animation: profilePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes profilePulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); }
         }
         
         .name {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             position: relative;
-            z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+            background: linear-gradient(45deg, #ffffff, #f0f9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .title {
-            font-size: 1.8rem;
-            font-weight: 400;
-            opacity: 0.95;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 500;
             position: relative;
-            z-index: 2;
-            line-height: 1.4;
+            z-index: 1;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
             flex-wrap: wrap;
-            gap: 35px;
-            margin-top: 40px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-            background: rgba(255,255,255,0.1);
-            padding: 12px 20px;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
         }
         
         .contact-item:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-        }
-        
-        .contact-item i {
-            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .main-content {
             display: grid;
-            grid-template-columns: 1.2fr 2.5fr;
+            grid-template-columns: 1fr 2fr;
             gap: 0;
+            min-height: 800px;
         }
         
         .sidebar {
-            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 50px 35px;
-            border-left: 6px solid #3b82f6;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 50px 40px;
+            border-right: 1px solid #e2e8f0;
         }
         
         .content {
-            padding: 50px 45px;
+            padding: 50px 40px;
+            background: white;
         }
         
         .section {
-            margin-bottom: 45px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .section-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #1e3a8a;
             margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            color: #1e293b;
             position: relative;
+            padding-bottom: 10px;
         }
         
         .section-title::after {
             content: '';
-            flex: 1;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, transparent);
-            border-radius: 2px;
-        }
-        
-        .section-title i {
-            font-size: 1.6rem;
-            color: #3b82f6;
-            background: rgba(59, 130, 246, 0.1);
-            padding: 10px;
-            border-radius: 50%;
-        }
-        
-        .skill-category {
-            margin-bottom: 35px;
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-        
-        .skill-category h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #374151;
-            margin-bottom: 18px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #e5e7eb;
-            position: relative;
-        }
-        
-        .skill-category h4::before {
-            content: '';
             position: absolute;
-            bottom: -3px;
-            right: 0;
+            bottom: 0;
+            left: 0;
             width: 50px;
             height: 3px;
-            background: #3b82f6;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             border-radius: 2px;
         }
         
-        .skills-list {
+        .skill-item {
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
         
-        .skill-tag {
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+        .skill-level {
+            font-size: 0.9rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
             color: white;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
-        }
-        
-        .skill-tag:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-        }
-        
-        .ai-skill {
-            background: linear-gradient(45deg, #8b5cf6, #7c3aed) !important;
-            box-shadow: 0 3px 10px rgba(139, 92, 246, 0.3) !important;
-        }
-        
-        .ai-skill:hover {
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4) !important;
-        }
-        
-        .experience-item {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 2px solid #e5e7eb;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
-        }
-        
-        .experience-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-            border-color: #3b82f6;
-        }
-        
-        .job-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #1e3a8a;
-            margin-bottom: 10px;
-        }
-        
-        .company {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #3b82f6;
-            margin-bottom: 8px;
-        }
-        
-        .period {
-            font-size: 1.1rem;
-            color: #6b7280;
-            margin-bottom: 20px;
-            font-weight: 600;
-            background: #f3f4f6;
-            padding: 5px 12px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-        
-        .job-description {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .job-description li {
-            margin-bottom: 12px;
-            padding-right: 25px;
-            position: relative;
-            color: #374151;
-            line-height: 1.7;
+            padding: 4px 12px;
+            border-radius: 15px;
             font-weight: 500;
         }
         
-        .job-description li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.2rem;
-            background: rgba(16, 185, 129, 0.1);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .experience-item, .project-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border-radius: 15px;
+            border-left: 4px solid #3b82f6;
+            position: relative;
+            transition: all 0.3s ease;
         }
         
-        .languages {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 2px solid #93c5fd;
+        .experience-item:hover, .project-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-title, .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .company, .project-tech {
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .description {
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(45deg, #e0e7ff, #c7d2fe);
+            color: #3730a3;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
         
         .language-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
-        }
-        
-        .language-item:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .language-name {
-            font-weight: 700;
-            color: #1e3a8a;
-            font-size: 1.1rem;
-        }
-        
-        .language-level {
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
-        }
-        
-        .personal-info {
-            background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 2px solid #fbbf24;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             margin-bottom: 15px;
-            color: #92400e;
-            font-weight: 600;
-        }
-        
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .info-item i {
-            color: #d97706;
-            width: 25px;
-            font-size: 1.1rem;
-        }
-        
-        .certifications {
-            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-            border-radius: 20px;
-            padding: 25px;
-            border: 2px solid #c084fc;
-        }
-        
-        .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            color: #581c87;
-            font-weight: 600;
-        }
-        
-        .cert-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .cert-item i {
-            color: #7c3aed;
-            font-size: 1.1rem;
-        }
-        
-        .professional-summary {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 3px solid #0ea5e9;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .professional-summary::before {
-            content: '💡';
-            position: absolute;
-            top: -15px;
-            right: 20px;
+            padding: 12px;
             background: white;
-            padding: 5px 10px;
-            border-radius: 50%;
-            font-size: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         
-        .professional-summary p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #075985;
-            font-weight: 500;
-            margin: 0;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .project-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 2px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-color: #3b82f6;
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 10px;
-        }
-        
-        .project-type {
-            font-size: 1rem;
-            color: #6b7280;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .tech-highlight {
-            background: linear-gradient(45deg, #10b981, #059669);
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
             color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         
         @media (max-width: 768px) {
@@ -523,61 +411,31 @@
                 grid-template-columns: 1fr;
             }
             
-            .contact-info {
-                flex-direction: column;
-                gap: 20px;
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
             }
             
             .name {
                 font-size: 2.5rem;
             }
             
-            .title {
-                font-size: 1.4rem;
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .content, .sidebar {
-                padding: 30px 25px;
+            .header {
+                padding: 50px 20px;
             }
             
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .sidebar, .content {
+                padding: 30px 20px;
             }
         }
         
-        .footer {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            color: white;
-            text-align: center;
-            padding: 40px;
-            font-size: 1.1rem;
-        }
-        
-        .footer p:first-child {
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .print-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-            color: white;
-            border: none;
-            padding: 18px 25px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            font-weight: 600;
-        }
-        
-        .print-btn:hover {
-            transform: scale(1.15) translateY(-3px);
-            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.5);
+        .print-only {
+            display: none;
         }
         
         @media print {
@@ -586,45 +444,45 @@
                 padding: 0;
             }
             
+            .floating-elements,
+            .download-btn {
+                display: none;
+            }
+            
             .resume-container {
                 box-shadow: none;
                 border-radius: 0;
+                background: white;
             }
             
-            .print-btn {
-                display: none;
+            .print-only {
+                display: block;
             }
         }
     </style>
 </head>
 <body>
+    <div class="floating-elements"></div>
+    
     <div class="resume-container">
         <header class="header">
             <div class="profile-image">
-                <i class="fas fa-user-tie"></i>
+                <i class="fas fa-code"></i>
             </div>
             <h1 class="name">يوسف درويش</h1>
-            <p class="title">مطور برمجيات متكامل | خبير Odoo & Salesforce | متخصص React & AI | عصري ومواكب للتطور</p>
+            <p class="title">مطور برمجيات إبداعي | Odoo, Salesforce, React, حلول مدعومة بالذكاء الاصطناعي</p>
             <div class="contact-info">
-                <div class="contact-item">
+                <a href="mailto:youssefdarwish20009@gmail.com" class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>youssefdarwish20009@gmail.com</span>
-                </div>
-                <div class="contact-item">
+                </a>
+                <a href="https://wa.me/966532441566" class="contact-item">
                     <i class="fab fa-whatsapp"></i>
                     <span>+966532441566</span>
-                </div>
+                </a>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>الرياض، المملكة العربية السعودية</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>linkedin.com/in/youssef-darwish</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/Darsh20009</span>
+                    <span>الرياض, المملكة العربية السعودية</span>
                 </div>
             </div>
         </header>
@@ -632,420 +490,235 @@
         <div class="main-content">
             <aside class="sidebar">
                 <section class="section">
-                    <h3 class="section-title">
-                        <i class="fas fa-code"></i>
-                        المهارات التقنية
-                    </h3>
-                    
-                    <div class="skill-category">
-                        <h4>تطوير الواجهات الأمامية</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">React.js</span>
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">Tailwind CSS</span>
-                            <span class="skill-tag">Bootstrap</span>
-                            <span class="skill-tag">Framer Motion</span>
+                    <h2 class="section-title">المهارات التقنية</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-cube" style="color: #8b5cf6;"></i>
+                            Odoo ERP
                         </div>
+                        <div class="skill-level">خبير</div>
                     </div>
-
-                    <div class="skill-category">
-                        <h4>تطوير الخلفية و APIs</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">RESTful APIs</span>
-                            <span class="skill-tag">Customer Data APIs</span>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-salesforce" style="color: #06d6a0;"></i>
+                            Salesforce Apex
                         </div>
+                        <div class="skill-level">متقدم</div>
                     </div>
-
-                    <div class="skill-category">
-                        <h4>منصات النشر الحديثة</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">Vercel</span>
-                            <span class="skill-tag">Render</span>
-                            <span class="skill-tag">GitHub Pages</span>
-                            <span class="skill-tag">Netlify</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">CI/CD</span>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-react" style="color: #3b82f6;"></i>
+                            React.js
                         </div>
+                        <div class="skill-level">متقدم</div>
                     </div>
-
-                    <div class="skill-category">
-                        <h4>أنظمة ERP & CRM</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">Odoo</span>
-                            <span class="skill-tag">Salesforce</span>
-                            <span class="skill-tag">Apex</span>
-                            <span class="skill-tag">Lightning Components</span>
-                            <span class="skill-tag">SOQL</span>
-                            <span class="skill-tag">Workflows</span>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-database" style="color: #ffd60a;"></i>
+                            PostgreSQL
                         </div>
+                        <div class="skill-level">متقدم</div>
                     </div>
-
-                    <div class="skill-category">
-                        <h4>الذكاء الاصطناعي والأتمتة</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag ai-skill">OpenAI API</span>
-                            <span class="skill-tag ai-skill">ChatGPT Integration</span>
-                            <span class="skill-tag ai-skill">GitHub Copilot</span>
-                            <span class="skill-tag ai-skill">AI-Assisted Development</span>
-                            <span class="skill-tag ai-skill">Code Automation</span>
-                            <span class="skill-tag ai-skill">AI Tools</span>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fab fa-python" style="color: #8b5cf6;"></i>
+                            Python
                         </div>
+                        <div class="skill-level">متقدم</div>
                     </div>
-
-                    <div class="skill-category">
-                        <h4>أدوات التطوير والتعاون</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">Git & GitHub</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">VS Code</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Chrome DevTools</span>
-                            <span class="skill-tag">Postman</span>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <i class="fas fa-cloud" style="color: #06d6a0;"></i>
+                            Cloud Deploy
                         </div>
+                        <div class="skill-level">متقدم</div>
                     </div>
                 </section>
 
                 <section class="section">
-                    <h3 class="section-title">
-                        <i class="fas fa-language"></i>
-                        اللغات
-                    </h3>
-                    <div class="languages">
-                        <div class="language-item">
-                            <span class="language-name">العربية</span>
-                            <span class="language-level">لغة أم</span>
-                        </div>
-                        <div class="language-item">
-                            <span class="language-name">الإنجليزية</span>
-                            <span class="language-level">احترافي</span>
-                        </div>
+                    <h2 class="section-title">اللغات</h2>
+                    <div class="language-item">
+                        <span><i class="fas fa-globe"></i> العربية</span>
+                        <span style="color: #3b82f6; font-weight: 600;">لغة أم</span>
+                    </div>
+                    <div class="language-item">
+                        <span><i class="fas fa-globe"></i> الإنجليزية</span>
+                        <span style="color: #3b82f6; font-weight: 600;">احترافي</span>
                     </div>
                 </section>
 
                 <section class="section">
-                    <h3 class="section-title">
-                        <i class="fas fa-info-circle"></i>
-                        معلومات شخصية
-                    </h3>
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>العمر: 20 سنة</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>الخبرة: +3 سنوات</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-robot"></i>
-                            <span>مطور عصري يستخدم AI</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>مواكب للتقنيات الحديثة</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-heart"></i>
-                            <span>شغوف بالتقنية والابتكار</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h3 class="section-title">
-                        <i class="fas fa-certificate"></i>
-                        الشهادات والإنجازات
-                    </h3>
-                    <div class="certifications">
-                        <div class="cert-item">
-                            <i class="fas fa-star"></i>
-                            <span>Salesforce Developer I</span>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-star"></i>
-                            <span>AWS Cloud Practitioner</span>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-star"></i>
-                            <span>React Professional</span>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-robot"></i>
-                            <span>AI Tools Expert</span>
-                        </div>
+                    <h2 class="section-title">الأدوات والتقنيات</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Git & GitHub</span>
+                        <span class="tech-tag">Render</span>
+                        <span class="tech-tag">Vercel</span>
+                        <span class="tech-tag">ChatGPT</span>
+                        <span class="tech-tag">GitHub Copilot</span>
                     </div>
                 </section>
             </aside>
 
             <main class="content">
                 <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-user-astronaut"></i>
-                        نبذة مهنية
-                    </h2>
-                    <div class="professional-summary">
-                        <p>
-                            مطور برمجيات متكامل وعصري مع خبرة تزيد عن 3 سنوات في تطوير تطبيقات الويب الحديثة وحلول الأعمال المتقدمة. متخصص في React.js، Odoo، Salesforce، وأدوات النشر الحديثة مثل Vercel و Render. أتميز بخبرتي في دمج APIs الخلفية مع بيانات العملاء وأطور عملي باستمرار باستخدام قوة أدوات الذكاء الاصطناعي والأتمتة. أسعى لبناء تطبيقات قابلة للتطوير في العالم الحقيقي وأنظمة ERP تتماشى مع اتجاهات التكنولوجيا الحالية. عملي مدفوع بالابتكار والكفاءة والتصميم النظيف، مع أساس قوي في التعلم الذاتي والعمل الحر.
+                    <h2 class="section-title">نبذة مهنية</h2>
+                    <p class="description">
+                        مطور برمجيات إبداعي ومبتكر يتمتع بخبرة عملية في Odoo وSalesforce (Apex) وReact وأدوات النشر الحديثة مثل Render وVercel. 
+                        متخصص في دمج APIs الخلفية مع بيانات العملاء، وأقوم بتحسين وتحديث عملي باستمرار باستخدام قوة أدوات الذكاء الاصطناعي والأتمتة.
+                        <br><br>
+                        أقوم ببناء تطبيقات ويب وأنظمة ERP قابلة للتطوير في العالم الحقيقي تتماشى مع اتجاهات التكنولوجيا الحالية. 
+                        عملي مدفوع بالابتكار والكفاءة والتصميم النظيف. مع أساس قوي في التعلم الذاتي والعمل الحر، أزدهر في البيئات التي تتطلب النمو المستمر والإبداع.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">الخبرة المهنية</h2>
+                    
+                    <div class="experience-item">
+                        <h3 class="job-title">مطور Odoo و Salesforce مستقل</h3>
+                        <div class="company">العمل الحر - عن بُعد</div>
+                        <div class="duration">سبتمبر 2021 - حتى الآن</div>
+                        <p class="description">
+                            • بناء وتخصيص وحدات Odoo لتغطية الموارد البشرية والمبيعات والمخزون<br>
+                            • تطوير Apex triggers مخصصة ومنطق لأتمتة Salesforce CRM<br>
+                            • دمج APIs بين Odoo-Salesforce لتبسيط بيانات العملاء والعمليات<br>
+                            • تطوير APIs خلفية آمنة للتعامل مع معلومات العملاء الحساسة<br>
+                            • نشر أنظمة ويب حديثة باستخدام Render لضمان توصيل سريع وقابل للتطوير<br>
+                            • تحسين العمل من خلال أدوات AI للاختبار وتوليد الكود والتحسين
                         </p>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-briefcase"></i>
-                        الخبرة المهنية
-                    </h2>
-
-                    <div class="experience-item">
-                        <h3 class="job-title">مطور واجهات أمامية متقدم</h3>
-                        <p class="company">شركة معاك (عمل عن بُعد)</p>
-                        <p class="period">يناير 2022 - يناير 2024</p>
-                        <ul class="job-description">
-                            <li>تصميم وتطوير واجهات مستخدم تفاعلية ومتجاوبة باستخدام React.js و TypeScript</li>
-                            <li>إدارة إصدارات الكود باستخدام Git & GitHub في بيئة عمل تعاونية احترافية</li>
-                            <li>تنفيذ ميزات محورها المستخدم وتحديثات التصميم باستخدام أحدث المعايير</li>
-                            <li>استخدام أدوات الذكاء الاصطناعي <span class="tech-highlight">بشكل فعال</span> لتحسين أداء الواجهة الأمامية والإنتاجية</li>
-                            <li>دمج تطبيقات الويب مع منصات الاستضافة الحديثة مثل <span class="tech-highlight">Vercel</span></li>
-                            <li>تحسين أداء التطبيقات وتجربة المستخدم باستخدام أفضل الممارسات الحديثة</li>
-                            <li>العمل مع فرق متعددة الاختصاصات لتقديم منتجات عالية الجودة</li>
-                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Odoo</span>
+                            <span class="tech-tag">Salesforce Apex</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
                     </div>
 
                     <div class="experience-item">
-                        <h3 class="job-title">مطور Odoo & Salesforce مستقل متخصص</h3>
-                        <p class="company">عمل حر عن بُعد - متعدد العملاء</p>
-                        <p class="period">سبتمبر 2021 - حتى الآن</p>
-                        <ul class="job-description">
-                            <li>بناء وتخصيص وحدات Odoo شاملة تغطي الموارد البشرية والمبيعات والمخزون</li>
-                            <li>تطوير محفزات Apex مخصصة وآليات متقدمة لأتمتة نظام Salesforce CRM</li>
-                            <li>دمج <span class="tech-highlight">APIs متقدمة</span> بين Odoo-Salesforce لتبسيط بيانات العملاء والعمليات</li>
-                            <li>تطوير APIs خلفية آمنة للتعامل مع <span class="tech-highlight">بيانات العملاء الحساسة</span></li>
-                            <li>نشر أنظمة ويب حديثة باستخدام <span class="tech-highlight">Render</span> مع ضمان التسليم السريع والقابل للتطوير</li>
-                            <li>تحسين العمل من خلال <span class="tech-highlight">أدوات الذكاء الاصطناعي</span> للاختبار وتوليد الكود والتحسين</li>
-                            <li>إنشاء تقارير وداشبوردات تحليلية متقدمة لاتخاذ القرارات</li>
-                            <li>تدريب العملاء وتقديم الدعم التقني المستمر</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <h3 class="job-title">مطور تطبيقات ويب متكامل</h3>
-                        <p class="company">مشاريع شخصية ومستقلة متنوعة</p>
-                        <p class="period">2020 - 2021</p>
-                        <ul class="job-description">
-                            <li>تطوير تطبيقات ويب كاملة باستخدام React.js و Node.js مع أحدث التقنيات</li>
-                            <li>تصميم قواعد بيانات متقدمة وتطوير APIs آمنة للتطبيقات التجارية</li>
-                            <li>تطبيق أفضل الممارسات في الأمان والأداء وتحسين محركات البحث</li>
-                            <li>اختبار التطبيقات بشكل شامل وضمان الجودة قبل النشر</li>
-                            <li>نشر التطبيقات على منصات السحابة المختلفة مع CI/CD</li>
-                            <li>بناء أساس قوي في تقنيات التطوير الحديثة والمعايير الصناعية</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-project-diagram"></i>
-                        المشاريع المميزة
-                    </h2>
-
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <h3 class="project-title">منصة إدارة المخزون الذكية</h3>
-                            <p class="project-type">مشروع Odoo متكامل مع AI</p>
-                            <ul class="job-description">
-                                <li>نظام إدارة مخزون متكامل مع تنبؤات ذكية</li>
-                                <li>تكامل مع أنظمة المحاسبة والمبيعات</li>
-                                <li>واجهة مستخدم متقدمة وتقارير تحليلية</li>
-                                <li>إشعارات تلقائية ونشر على <span class="tech-highlight">Render</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">نظام CRM متقدم مع AI</h3>
-                            <p class="project-type">حل Salesforce مخصص</p>
-                            <ul class="job-description">
-                                <li>أتمتة عمليات المبيعات باستخدام الذكاء الاصطناعي</li>
-                                <li>تكامل مع أنظمة البريد الإلكتروني والهاتف</li>
-                                <li>تحليلات متقدمة وتقارير أداء تفاعلية</li>
-                                <li>واجهات Lightning Components مخصصة</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">محفظة شخصية تفاعلية</h3>
-                            <p class="project-type">React.js + Vercel</p>
-                            <ul class="job-description">
-                                <li>موقع شخصي سريع ومتجاوب باستخدام React</li>
-                                <li>نشر تلقائي على <span class="tech-highlight">Vercel</span> مع GitHub</li>
-                                <li>تحديثات فورية وأداء محسن</li>
-                                <li>تصميم حديث ومتوافق مع الجوال</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">نظام تكامل Odoo-Salesforce</h3>
-                            <p class="project-type">API Integration Project</p>
-                            <ul class="job-description">
-                                <li>تزامن بيانات العملاء بين النظامين</li>
-                                <li><span class="tech-highlight">APIs مخصصة</span> للبيانات الحساسة</li>
-                                <li>واجهة إدارة موحدة للفرق</li>
-                                <li>نشر آمن على منصات سحابية متقدمة</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">تطبيق إدارة المشاريع بالذكاء الاصطناعي</h3>
-                            <p class="project-type">Full-Stack + AI Integration</p>
-                            <ul class="job-description">
-                                <li>إدارة المهام بمساعدة <span class="tech-highlight">الذكاء الاصطناعي</span></li>
-                                <li>تحليل الإنتاجية وتوقع المواعيد النهائية</li>
-                                <li>واجهة تفاعلية متقدمة</li>
-                                <li>نشر على <span class="tech-highlight">Vercel</span> مع أداء عالي</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-card">
-                            <h3 class="project-title">منصة التجارة الإلكترونية</h3>
-                            <p class="project-type">E-commerce + Payment Integration</p>
-                            <ul class="job-description">
-                                <li>نظام دفع متكامل وآمن</li>
-                                <li>إدارة المنتجات والطلبات</li>
-                                <li>تحليلات المبيعات التفاعلية</li>
-                                <li>نشر على <span class="tech-highlight">Render</span> مع قاعدة بيانات محسنة</li>
-                            </ul>
+                        <h3 class="job-title">مطور واجهة أمامية</h3>
+                        <div class="company">شركة معاك</div>
+                        <div class="duration">يناير 2022 - يناير 2024</div>
+                        <p class="description">
+                            • تصميم واجهات تفاعلية ومتجاوبة باستخدام React.js<br>
+                            • إدارة إصدارات الكود مع Git & GitHub في سير عمل تعاوني<br>
+                            • تنفيذ ميزات تركز على المستخدم وتحديثات التصميم<br>
+                            • استخدام أدوات AI بنشاط لتحسين أداء الواجهة الأمامية وإنتاجية البرمجة<br>
+                            • دمج تطبيقات الويب مع منصات الاستضافة الحديثة مثل Vercel
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Vercel</span>
                         </div>
                     </div>
                 </section>
 
                 <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-graduation-cap"></i>
-                        التعليم والتطوير المستمر
-                    </h2>
-
-                    <div class="experience-item">
-                        <h3 class="job-title">طالب ثانوية عامة مع تخصص تقني</h3>
-                        <p class="company">التعليم الثانوي</p>
-                        <p class="period">مستمر - متوقع التخرج 2026</p>
-                        <ul class="job-description">
-                            <li>التطوير المهني النشط من خلال التعلم عبر الإنترنت والمشاريع الحقيقية</li>
-                            <li>التخصص في تطوير Odoo ERP وبرمجة Salesforce Apex</li>
-                            <li>إتقان React وتطوير الواجهات الأمامية الحديثة</li>
-                            <li>تطبيق عملي للتقنيات الحديثة في مشاريع تجارية</li>
-                        </ul>
+                    <h2 class="section-title">مشاريع مختارة</h2>
+                    
+                    <div class="project-item">
+                        <h3 class="project-title">🛍️ نظام ERP للبيع بالتجزئة</h3>
+                        <div class="project-tech">Odoo ERP System</div>
+                        <p class="description">
+                            نظام ERP كامل مبني في Odoo لسلسلة بيع بالتجزئة، يشمل المخزون والفوترة وتتبع الموظفين ولوحات رؤى العملاء.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Odoo</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
                     </div>
 
+                    <div class="project-item">
+                        <h3 class="project-title">🔄 أداة مزامنة Odoo ↔ Salesforce</h3>
+                        <div class="project-tech">API Integration Tool</div>
+                        <p class="description">
+                            دمج قائم على API بين Odoo وSalesforce لمزامنة العملاء المحتملين والعملاء والمبيعات في الوقت الفعلي.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Salesforce API</span>
+                            <span class="tech-tag">Odoo API</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">REST</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 class="project-title">🌐 محفظة شخصية على Vercel</h3>
+                        <div class="project-tech">Modern Portfolio Website</div>
+                        <p class="description">
+                            محفظة سريعة وحديثة تركز على الهاتف المحمول أولاً مبنية بـ React.js ونُشرت عبر Vercel مع دمج GitHub CI/CD.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Vercel</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">GitHub</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">التعليم</h2>
                     <div class="experience-item">
-                        <h3 class="job-title">دورات تطوير متقدمة ومعاصرة</h3>
-                        <p class="company">منصات تعليمية متنوعة ومتخصصة</p>
-                        <p class="period">2020 - 2024 (مستمر)</p>
-                        <ul class="job-description">
-                            <li>دورة React Advanced Patterns مع أحدث التقنيات</li>
-                            <li>Salesforce Developer Certification و Apex المتقدم</li>
-                            <li>AWS Cloud Solutions والنشر السحابي</li>
-                            <li><span class="tech-highlight">AI Integration in Web Development</span> وأدوات الذكاء الاصطناعي</li>
-                            <li>دورات Vercel و Render للنشر الحديث</li>
-                            <li>API Development and Security أفضل الممارسات</li>
-                        </ul>
+                        <h3 class="job-title">طالب ثانوي</h3>
+                        <div class="company">مستمر (التخرج المتوقع: 2026)</div>
+                        <p class="description">
+                            أسعى بنشاط للتطوير المهني من خلال التعلم عبر الإنترنت ومشاريع العمل الحر الواقعية والتطبيقات المبنية ذاتياً.
+                        </p>
                     </div>
                 </section>
             </main>
         </div>
 
         <footer class="footer">
-            <p>© 2024 يوسف درويش - مطور برمجيات متكامل وعصري | جميع الحقوق محفوظة</p>
-            <p style="margin-top: 15px; font-size: 1rem; opacity: 0.9;">
-                🚀 مستعد لتحويل أفكارك إلى حلول تقنية مبتكرة بمساعدة أحدث تقنيات الذكاء الاصطناعي
-            </p>
-            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
-                💡 مطور عصري | مواكب للتطور | خبير في الأدوات الحديثة
-            </p>
+            <p>© 2024 يوسف درويش - مطور برمجيات إبداعي | تم التطوير بحب وإبداع 💜</p>
+            <p class="print-only">للتواصل: youssefdarwish20009@gmail.com | +966532441566</p>
         </footer>
     </div>
 
-    <button class="print-btn" onclick="window.print()">
-        <i class="fas fa-print"></i> طباعة
+    <button class="download-btn" onclick="window.print()" title="طباعة أو حفظ كـ PDF">
+        <i class="fas fa-download"></i>
     </button>
 
     <script>
-        // Enhanced animations and interactions
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        };
+        // Add interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill bars on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.experience-item, .project-card, .skill-category').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(40px)';
-            item.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
-            observer.observe(item);
-        });
-
-        // Enhanced skill tag interactions
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', () => {
-                tag.style.transform = 'scale(1.08) translateY(-3px) rotate(2deg)';
-            });
-            
-            tag.addEventListener('mouseleave', () => {
-                tag.style.transform = 'scale(1) translateY(0) rotate(0deg)';
-            });
-        });
-
-        // Enhanced contact item interactions
-        document.querySelectorAll('.contact-item').forEach(item => {
-            item.style.cursor = 'pointer';
-            item.addEventListener('click', () => {
-                const text = item.textContent.trim();
-                navigator.clipboard.writeText(text).then(() => {
-                    const original = item.innerHTML;
-                    item.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
-                    item.style.background = 'rgba(16, 185, 129, 0.2)';
-                    setTimeout(() => {
-                        item.innerHTML = original;
-                        item.style.background = '';
-                    }, 2500);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                        entry.target.classList.add('animate');
+                    }
                 });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
             });
-        });
 
-        // Floating animation for profile image
-        const profileImage = document.querySelector('.profile-image');
-        setInterval(() => {
-            profileImage.style.transform = 'translateY(-5px)';
-            setTimeout(() => {
-                profileImage.style.transform = 'translateY(0)';
-            }, 1000);
-        }, 3000);
-
-        // Add click effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                card.style.transform = 'translateY(-10px) scale(1.02)';
-                setTimeout(() => {
-                    card.style.transform = 'translateY(-5px) scale(1)';
-                }, 200);
+            // Add hover effects
+            document.querySelectorAll('.skill-item, .experience-item, .project-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
             });
         });
     </script>
