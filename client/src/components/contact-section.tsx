@@ -26,21 +26,21 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Create WhatsApp message
     const whatsappMessage = `*New Contact Message*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n\n*Message:*\n${formData.message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappUrl = `https://wa.me/966532441566?text=${encodedMessage}`;
-    
+
     // Open WhatsApp
     window.open(whatsappUrl, '_blank');
-    
+
     // Show success message
     toast({
       title: "Success!",
       description: t("form_success"),
     });
-    
+
     // Clear form
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
@@ -108,7 +108,7 @@ export function ContactSection() {
             {t("contact_description")}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
@@ -137,7 +137,7 @@ export function ContactSection() {
                 </a>
               ))}
             </div>
-            
+
             {/* Social Links */}
             <div className="p-6 bg-card rounded-xl border">
               <h4 className="font-semibold mb-4 flex items-center">
@@ -159,7 +159,7 @@ export function ContactSection() {
                 ))}
               </div>
             </div>
-            
+
             {/* View/Download Resume */}
             <div className="p-6 bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-xl border">
               <h4 className="font-semibold mb-2 text-primary">السيرة الذاتية</h4>
@@ -172,13 +172,13 @@ export function ContactSection() {
                   onClick={async () => {
                     try {
                       const resumeUrl = '/youssef-darwish-resume.html';
-                      
+
                       // Test if file exists
                       const response = await fetch(resumeUrl, { method: 'HEAD' });
                       if (!response.ok) {
                         throw new Error('File not found');
                       }
-                      
+
                       window.open(resumeUrl, '_blank', 'noopener,noreferrer');
                       toast({
                         title: "تم فتح السيرة الذاتية",
@@ -228,7 +228,7 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-xl border shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -262,7 +262,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">
                   {t("form_subject")}
@@ -277,7 +277,7 @@ export function ContactSection() {
                   placeholder="What's this about?"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   {t("form_message")}
@@ -293,7 +293,7 @@ export function ContactSection() {
                   className="resize-none"
                 />
               </div>
-              
+
               <Button 
                 type="submit" 
                 size="lg" 

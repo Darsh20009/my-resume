@@ -6,7 +6,7 @@ import { SkillsSection } from "@/components/skills-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ContactSection } from "@/components/contact-section";
-import { Button } from "@/components/ui/button";
+import { ResumeSection } from "@/components/resume-section";
 import { useLanguage } from "@/hooks/use-language";
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
@@ -31,16 +31,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main>
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <ResumeSection />
         <ContactSection />
       </main>
-      
+
       {/* Footer */}
       <footer className="bg-card border-t py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -55,7 +56,7 @@ export default function Home() {
           </p>
         </div>
       </footer>
-      
+
       {/* Back to Top Button */}
       {showBackToTop && (
         <Button
