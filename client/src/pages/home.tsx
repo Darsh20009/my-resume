@@ -10,6 +10,7 @@ import { ResumeSection } from "@/components/resume-section";
 import { useLanguage } from "@/hooks/use-language";
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const { t } = useLanguage();
