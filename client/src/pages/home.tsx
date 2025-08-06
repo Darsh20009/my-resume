@@ -6,7 +6,6 @@ import { SkillsSection } from "@/components/skills-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ContactSection } from "@/components/contact-section";
-import { ResumeSection } from "@/components/resume-section";
 import { useLanguage } from "@/hooks/use-language";
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
@@ -39,7 +38,6 @@ export default function Home() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
-        <ResumeSection />
         <ContactSection />
       </main>
 
