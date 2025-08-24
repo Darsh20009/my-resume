@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
 import { Mail, Eye, Code, Database, Zap, Bot } from "lucide-react";
-import profileImage from "@assets/Screenshot 2025-08-05 133119_1754389885686.png";
+import profileImage from "@assets/Screenshot 2025-08-24 221022_1756062735122.png";
 
 export function HeroSection() {
   const { t } = useLanguage();
