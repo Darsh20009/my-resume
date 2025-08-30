@@ -6,6 +6,7 @@ export const translations = {
     nav_skills: "Skills",
     nav_experience: "Experience",
     nav_projects: "Projects",
+    nav_certificates: "Certificates",
     nav_contact: "Contact",
     
     // Hero Section
@@ -96,6 +97,15 @@ export const translations = {
     resume_view: "View Creative Resume",
     resume_download: "Download Creative Resume",
     
+    // Certificates Section
+    certificates_title: "Certifications",
+    certificates_subtitle: "Professional achievements and recognitions",
+    oracle_title: "Oracle APEX Cloud Developer",
+    oracle_description: "Certified Professional in Oracle APEX Cloud Development",
+    oracle_issued: "Issued: August 2025",
+    oracle_issuer: "Oracle Corporation",
+    view_certificate: "View Certificate",
+    
     // Footer
     footer_tagline: "Creative Full-Stack Developer",
     download_resume: "Download Resume",
@@ -112,6 +122,7 @@ export const translations = {
     nav_skills: "المهارات",
     nav_experience: "الخبرة",
     nav_projects: "المشاريع",
+    nav_certificates: "الشهادات",
     nav_contact: "التواصل",
     
     // Hero Section
@@ -201,6 +212,15 @@ export const translations = {
     resume_description: "اطلع على نظرة شاملة عن خبراتي ومهاراتي التقنية",
     resume_view: "عرض السيرة الذاتية الإبداعية",
     resume_download: "تحميل السيرة الإبداعية",
+    
+    // Certificates Section
+    certificates_title: "الشهادات",
+    certificates_subtitle: "الإنجازات المهنية والاعترافات",
+    oracle_title: "مطور Oracle APEX السحابي",
+    oracle_description: "محترف معتمد في تطوير Oracle APEX السحابي",
+    oracle_issued: "تاريخ الإصدار: أغسطس 2025",
+    oracle_issuer: "شركة Oracle",
+    view_certificate: "عرض الشهادة",
     
     // Footer
     footer_tagline: "مطور مواقع إبداعي متكامل",
