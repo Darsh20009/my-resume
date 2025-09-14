@@ -1,5 +1,8 @@
 import { useLanguage } from "@/hooks/use-language";
 import { Calendar, MapPin, Building2 } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+import ma3kBadge from "@assets/Screenshot 2025-09-13 190600_1757874359177.png";
 
 export function ExperienceSection() {
   const { t } = useLanguage();
@@ -13,6 +16,8 @@ export function ExperienceSection() {
       type: "Full-time",
       color: "border-emerald-500",
       bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
+      image: ma3kBadge,
+      imageAlt: "Ma3k Company work ID card for Youssef Darwish",
       descriptions: [
         "Leading web development projects and managing technical teams",
         "Directing large-scale website and application development initiatives",
@@ -107,6 +112,33 @@ export function ExperienceSection() {
                       {exp.type}
                     </span>
                   </div>
+                  
+                  {/* Work card image */}
+                  {exp.image && (
+                    <div className="mb-4">
+                      <a 
+                        href={exp.image} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        data-testid="link-work-card-ma3k"
+                        className="inline-block"
+                      >
+                        <div className="w-full sm:w-64">
+                          <AspectRatio ratio={3/4}>
+                            <img
+                              src={exp.image}
+                              alt={exp.imageAlt || "Work card"}
+                              className="object-cover rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-300"
+                              data-testid="img-work-card"
+                            />
+                          </AspectRatio>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-2 hover:text-primary transition-colors" data-testid="text-work-card-caption">
+                          View work card
+                        </p>
+                      </a>
+                    </div>
+                  )}
                   
                   <ul className="space-y-2">
                     {exp.descriptions.map((desc, descIndex) => (
