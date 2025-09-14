@@ -8,6 +8,9 @@ import { cn } from "@/lib/utils";
 
 import oracleBadge from "@/assets/oracle-badge.png";
 import oracleCertificate from "@/assets/oracle-certificate.png";
+import oracleFusionAIBadge from "@/assets/oracle-fusion-ai-badge.png";
+import oracleFusionAICertificate from "@/assets/oracle-fusion-ai-certificate.png";
+import oracleApexCertificate from "@/assets/oracle-apex-certificate.png";
 
 export function CertificatesSection() {
   const { t } = useLanguage();
@@ -34,6 +37,39 @@ export function CertificatesSection() {
       image: oracleCertificate,
       type: "Certificate",
       color: "from-blue-500 to-purple-500",
+      badgeColor: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
+    },
+    {
+      id: "oracle-fusion-ai-badge",
+      title: "Oracle Certified Foundations Associate",
+      description: "Oracle Fusion AI Agent Studio Certified Foundations Associate - Rel 1",
+      issuer: "Oracle Corporation",
+      date: "September 14, 2025",
+      image: oracleFusionAIBadge,
+      type: "Associate",
+      color: "from-amber-500 to-orange-600",
+      badgeColor: "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300"
+    },
+    {
+      id: "oracle-fusion-ai-certificate",
+      title: "Oracle Certified Foundations Associate",
+      description: "Certificate of Recognition - Oracle Fusion AI Agent Studio Certified Foundations Associate",
+      issuer: "Oracle University",
+      date: "September 14, 2025",
+      image: oracleFusionAICertificate,
+      type: "Certificate",
+      color: "from-orange-500 to-red-600",
+      badgeColor: "bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300"
+    },
+    {
+      id: "oracle-apex-certificate",
+      title: "Oracle APEX Cloud Certified Developer Professional",
+      description: "Oracle APEX Cloud Developer Professional certification demonstrates expertise in building modern applications",
+      issuer: "Oracle",
+      date: "August 25, 2025",
+      image: oracleApexCertificate,
+      type: "Professional",
+      color: "from-blue-600 to-indigo-600",
       badgeColor: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
     }
   ];
