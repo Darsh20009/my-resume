@@ -6,6 +6,23 @@ export function ExperienceSection() {
 
   const experiences = [
     {
+      title: "Web Projects Director (WPD)",
+      company: "Ma3k Company Technology Solutions",
+      period: "2024 - Present",
+      location: "Saudi Arabia",
+      type: "Full-time",
+      color: "border-emerald-500",
+      bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
+      descriptions: [
+        "Leading web development projects and managing technical teams",
+        "Directing large-scale website and application development initiatives",
+        "Overseeing project architecture and technical implementation strategies",
+        "Managing client relationships and ensuring project delivery excellence",
+        "Implementing modern web technologies and development best practices",
+        "Coordinating cross-functional teams to deliver innovative technology solutions",
+      ],
+    },
+    {
       title: t("exp1_title"),
       company: t("exp1_company"),
       period: t("exp1_period"),
